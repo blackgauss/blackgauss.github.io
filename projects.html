@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - blackgauss</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">blackgauss</a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+            </ul>
+            <button
+                type="button"
+                class="hamburger"
+                id="hamburger"
+                aria-label="Toggle navigation menu"
+                aria-controls="navMenu"
+                aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="page-content">
+        <div class="container">
+            <h1 class="page-title">Projects</h1>
+            <p class="page-subtitle">Explore my work and experiments</p>
+            
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be loaded from config.js or API -->
+            </div>
+
+            <!-- Empty State (shown when no projects) -->
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <p>🚧 Projects coming soon...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> blackgauss. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/blackgauss" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/erikimaj" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
