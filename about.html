@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - blackgauss</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">blackgauss</a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="page-content">
+        <div class="container">
+            <h1 class="page-title">About Me</h1>
+            
+            <!-- Profile Section -->
+            <div class="about-section">
+                <div class="about-card">
+                    <div class="profile-header">
+                        <!-- You can add a profile image here -->
+                        <!-- <img src="assets/images/profile.jpg" alt="Profile" class="profile-image"> -->
+                        <div class="profile-info">
+                            <h2 class="profile-name" id="profileName">Your Name</h2>
+                            <p class="profile-title" id="profileTitle">Your Title / Role</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bio Section -->
+            <div class="about-section">
+                <h2 class="section-heading">Bio</h2>
+                <div class="about-card">
+                    <div class="bio-content" id="bioContent">
+                        <p>
+                            Hello! I'm a passionate developer with expertise in building 
+                            web applications and solving complex problems. I love working with modern 
+                            technologies and creating elegant solutions.
+                        </p>
+                        <p>
+                            My journey in software development has been driven by curiosity and a 
+                            desire to create meaningful projects that make a difference.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Section -->
+            <div class="about-section">
+                <h2 class="section-heading">Education</h2>
+                <div class="about-card">
+                    <div class="education-list" id="educationList">
+                        <!-- Education items will be loaded from config.js -->
+                        <div class="education-item">
+                            <h3 class="education-degree">Degree Name</h3>
+                            <p class="education-school">University Name</p>
+                            <p class="education-year">Year</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="about-section">
+                <h2 class="section-heading">Skills & Interest</h2>
+                <div class="about-card">
+                    <div class="skills-grid" id="skillsGrid">
+                        <!-- Skills will be loaded from config.js -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="about-section">
+                <h2 class="section-heading">Get In Touch</h2>
+                <div class="about-card">
+                    <div class="contact-info" id="contactInfo">
+                        <p>📧 <span id="contactEmail">your.email@example.com</span></p>
+                        <p>📍 <span id="contactLocation">Your Location</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> blackgauss. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/blackgauss" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/erikimaj" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

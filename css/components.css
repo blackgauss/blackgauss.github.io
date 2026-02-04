@@ -1,0 +1,360 @@
+/* ================================
+   Buttons
+   ================================ */
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 0;
+    text-decoration: none;
+    font-weight: 400;
+    cursor: pointer;
+    border: 1px solid var(--text-primary);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.btn::before {
+    content: '[ ';
+}
+
+.btn::after {
+    content: ' ]';
+}
+
+.btn-primary {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+
+/* ================================
+   Cards
+   ================================ */
+
+.card {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    padding: var(--spacing-lg);
+}
+
+/* ================================
+   About Page Components
+   ================================ */
+
+.about-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-heading {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.section-heading::before {
+    content: '## ';
+}
+
+.about-card {
+    background-color: var(--bg-primary);
+    border: none;
+    border-left: 2px solid var(--border-color);
+    border-radius: 0;
+    padding: 0 0 0 var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.profile-header {
+    display: block;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 0;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    display: none;
+}
+
+.profile-info {
+    width: 100%;
+}
+
+.profile-name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+}
+
+.profile-name::before {
+    content: 'Name: ';
+}
+
+.profile-title {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.profile-title::before {
+    content: 'Title: ';
+}
+
+.bio-content p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+    line-height: 2;
+    text-align: justify;
+}
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.education-item {
+    border-left: none;
+    padding-left: 0;
+}
+
+.education-item::before {
+    content: '* ';
+}
+
+.education-degree {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+    display: inline;
+}
+
+.education-school {
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    display: block;
+    padding-left: var(--spacing-sm);
+}
+
+.education-school::before {
+    content: '  Institution: ';
+}
+
+.education-year {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    padding-left: var(--spacing-sm);
+    display: block;
+}
+
+.education-year::before {
+    content: '  Year: ';
+}
+
+.skills-grid {
+    display: block;
+    columns: 2;
+    column-gap: var(--spacing-lg);
+}
+
+.skill-tag {
+    background-color: transparent;
+    color: var(--text-primary);
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    font-weight: 400;
+    text-align: left;
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    break-inside: avoid;
+}
+
+.skill-tag::before {
+    content: '- ';
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.contact-info p {
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+/* ================================
+   Projects Page Components
+   ================================ */
+
+.projects-grid {
+    display: block;
+    margin-top: var(--spacing-xl);
+}
+
+.project-card {
+    background-color: var(--bg-primary);
+    border: none;
+    border-left: 2px solid var(--border-color);
+    border-radius: 0;
+    padding: var(--spacing-md) 0 var(--spacing-md) var(--spacing-md);
+    display: block;
+    margin-bottom: var(--spacing-xl);
+    page-break-inside: avoid;
+}
+
+.project-header {
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.project-title::before {
+    content: '### ';
+}
+
+.project-description {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    line-height: 2;
+    text-align: justify;
+}
+
+.project-tags {
+    display: block;
+    margin-bottom: var(--spacing-md);
+}
+
+.project-tag {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: 4px 10px;
+    border-radius: 0;
+    border: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.project-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.project-link {
+    color: var(--text-primary);
+    text-decoration: underline;
+    font-weight: 400;
+}
+
+.project-status {
+    display: block;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-sm);
+    background-color: transparent;
+    color: var(--text-primary);
+}
+
+.project-status::before {
+    content: 'Status: ';
+    font-weight: 700;
+}
+
+.status-active::after {
+    content: ' [ACTIVE]';
+}
+
+.status-wip::after {
+    content: ' [IN PROGRESS]';
+}
+
+.status-completed::after {
+    content: ' [COMPLETED]';
+}
+
+.empty-state {
+    text-align: left;
+    padding: var(--spacing-xl) 0;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/* ================================
+   Utility Classes
+   ================================ */
+
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+
+/* ================================
+   Responsive Adjustments
+   ================================ */
+
+@media (max-width: 768px) {
+    .profile-header {
+        display: block;
+    }
+
+    .skills-grid {
+        columns: 1;
+    }
+
+    .projects-grid {
+        display: block;
+    }
+
+    .project-card {
+        padding: var(--spacing-md) 0 var(--spacing-md) var(--spacing-sm);
+    }
+
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+}
