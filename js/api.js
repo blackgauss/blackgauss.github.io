@@ -207,5 +207,3 @@ if (typeof module !== 'undefined' && module.exports) {
         getComputationResult
     };
 }
-
-console.log('API module loaded');
