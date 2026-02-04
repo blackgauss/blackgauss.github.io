@@ -11,7 +11,7 @@ const siteConfig = {
         email: "iykyk@example.com",
         location: "San Francisco, California",
         bio: [
-            "Hello. I like mathematics and it's implimentations on computers.",
+            "Hello. I like mathematics and its implementations on computers.",
             "I currently work as a Machine Learning Engineer on the modelling team in a performance AdTech company."
         ]
     },
@@ -41,7 +41,7 @@ const siteConfig = {
             title: "PocketPartition",
             description: "A Python package for working with numerical semigroups and partitions, providing tools for analysis and computation in algebraic combinatorics.",
             tags: ["Python", "Combinatorics"],
-            status: "on hold", // active, wip, completed
+            status: "wip", // active, wip, completed
             links: {
                 github: "https://github.com/blackgauss/pocketpartition",
                 details: null

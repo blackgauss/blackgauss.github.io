@@ -120,13 +120,19 @@ function displayComputationResult(result, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    // Example result display
-    container.innerHTML = `
-        <div class="result-card">
-            <h3>Computation Result</h3>
-            <pre>${JSON.stringify(result, null, 2)}</pre>
-        </div>
-    `;
+    container.innerHTML = '';
+    const resultCard = document.createElement('div');
+    resultCard.className = 'result-card';
+    
+    const title = document.createElement('h3');
+    title.textContent = 'Computation Result';
+    resultCard.appendChild(title);
+    
+    const pre = document.createElement('pre');
+    pre.textContent = JSON.stringify(result, null, 2);
+    resultCard.appendChild(pre);
+    
+    container.appendChild(resultCard);
 }
 
 /**
@@ -136,11 +142,13 @@ function showLoading(containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    container.innerHTML = `
-        <div class="loading">
-            <p>Loading...</p>
-        </div>
-    `;
+    container.innerHTML = '';
+    const loadingDiv = document.createElement('div');
+    loadingDiv.className = 'loading';
+    const p = document.createElement('p');
+    p.textContent = 'Loading...';
+    loadingDiv.appendChild(p);
+    container.appendChild(loadingDiv);
 }
 
 /**
@@ -150,11 +158,13 @@ function showError(message, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    container.innerHTML = `
-        <div class="error-message">
-            <p>❌ ${message}</p>
-        </div>
-    `;
+    container.innerHTML = '';
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    const p = document.createElement('p');
+    p.textContent = '❌ ' + message;
+    errorDiv.appendChild(p);
+    container.appendChild(errorDiv);
 }
 
 // ================================

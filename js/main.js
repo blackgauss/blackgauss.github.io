@@ -23,6 +23,8 @@ function initNavigation() {
     // Mobile menu toggle
     if (hamburger) {
         hamburger.addEventListener('click', function() {
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
@@ -35,6 +37,7 @@ function initNavigation() {
                 navMenu.classList.remove('active');
                 if (hamburger) {
                     hamburger.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
                 }
             }
         });
@@ -47,6 +50,7 @@ function initNavigation() {
             navMenu.classList.remove('active');
             if (hamburger) {
                 hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
             }
         }
     });
@@ -135,29 +139,78 @@ function loadProjectsContent() {
     }
 
     // Load projects
-    projectsGrid.innerHTML = siteConfig.projects.map(project => {
-        const statusClass = project.status ? `status-${project.status}` : '';
-        const statusText = project.status ? 
-            project.status.replace('wip', 'In Progress').replace('active', 'Active').replace('completed', 'Completed') : '';
-
-        return `
-            <div class="project-card">
-                ${project.status ? `<span class="project-status ${statusClass}">${statusText}</span>` : ''}
-                <div class="project-header">
-                    <h3 class="project-title">${project.title}</h3>
-                </div>
-                <p class="project-description">${project.description}</p>
-                <div class="project-tags">
-                    ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
-                </div>
-                <div class="project-links">
-                    ${project.links.demo ? `<a href="${project.links.demo}" class="project-link" target="_blank" rel="noopener">Live Demo →</a>` : ''}
-                    ${project.links.github ? `<a href="${project.links.github}" class="project-link" target="_blank" rel="noopener">GitHub →</a>` : ''}
-                    ${project.links.details ? `<a href="${project.links.details}" class="project-link">Details →</a>` : ''}
-                </div>
-            </div>
-        `;
-    }).join('');
+    siteConfig.projects.forEach(project => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        
+        if (project.status) {
+            const statusSpan = document.createElement('span');
+            statusSpan.className = `project-status status-${project.status}`;
+            const statusText = project.status
+                .replace('wip', 'In Progress')
+                .replace('active', 'Active')
+                .replace('completed', 'Completed');
+            statusSpan.textContent = statusText;
+            card.appendChild(statusSpan);
+        }
+        
+        const header = document.createElement('div');
+        header.className = 'project-header';
+        const title = document.createElement('h3');
+        title.className = 'project-title';
+        title.textContent = project.title;
+        header.appendChild(title);
+        card.appendChild(header);
+        
+        const desc = document.createElement('p');
+        desc.className = 'project-description';
+        desc.textContent = project.description;
+        card.appendChild(desc);
+        
+        const tagsDiv = document.createElement('div');
+        tagsDiv.className = 'project-tags';
+        project.tags.forEach(tag => {
+            const tagSpan = document.createElement('span');
+            tagSpan.className = 'project-tag';
+            tagSpan.textContent = tag;
+            tagsDiv.appendChild(tagSpan);
+        });
+        card.appendChild(tagsDiv);
+        
+        const linksDiv = document.createElement('div');
+        linksDiv.className = 'project-links';
+        
+        if (project.links.demo) {
+            const demoLink = document.createElement('a');
+            demoLink.href = project.links.demo;
+            demoLink.className = 'project-link';
+            demoLink.target = '_blank';
+            demoLink.rel = 'noopener';
+            demoLink.textContent = 'Live Demo →';
+            linksDiv.appendChild(demoLink);
+        }
+        
+        if (project.links.github) {
+            const githubLink = document.createElement('a');
+            githubLink.href = project.links.github;
+            githubLink.className = 'project-link';
+            githubLink.target = '_blank';
+            githubLink.rel = 'noopener';
+            githubLink.textContent = 'GitHub →';
+            linksDiv.appendChild(githubLink);
+        }
+        
+        if (project.links.details) {
+            const detailsLink = document.createElement('a');
+            detailsLink.href = project.links.details;
+            detailsLink.className = 'project-link';
+            detailsLink.textContent = 'Details →';
+            linksDiv.appendChild(detailsLink);
+        }
+        
+        card.appendChild(linksDiv);
+        projectsGrid.appendChild(card);
+    });
 }
 
 // ================================
