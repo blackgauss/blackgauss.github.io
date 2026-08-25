@@ -6,20 +6,24 @@
   <title>{{ page.title | default: site.title }}</title>
 </head>
 <body>
+  {% if page.url != '/' %}
   <header>
     <nav>
       <a href="/">Index</a> ·
       <a href="https://github.com/blackgauss/blackgauss.github.io">Source</a>
     </nav>
   </header>
+  {% endif %}
 
   <main>
     {{ content }}
   </main>
 
+  {% if page.url != '/' %}
   <footer>
     <hr>
     <p><small>Static archive. Written in Markdown.</small></p>
   </footer>
+  {% endif %}
 </body>
 </html>
