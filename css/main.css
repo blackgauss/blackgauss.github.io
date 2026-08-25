@@ -1,0 +1,335 @@
+/* ================================
+   Global Variables & Reset
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors - Whitepaper Style */
+    --primary-color: #000000;
+    --primary-dark: #000000;
+    --primary-light: #333333;
+    --secondary-color: #666666;
+    --accent-color: #000000;
+    
+    /* Text Colors */
+    --text-primary: #000000;
+    --text-secondary: #333333;
+    --text-light: #666666;
+    
+    /* Background Colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #fafafa;
+    --bg-tertiary: #f5f5f5;
+    --bg-dark: #000000;
+    
+    /* Border & Shadows */
+    --border-color: #d0d0d0;
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Typography - Monospace for typewriter feel */
+    --font-sans: 'Prestige Elite', 'Prestige Elite Std', 'Courier New', monospace;
+    --font-mono: 'Prestige Elite', 'Prestige Elite Std', 'Courier New', monospace;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 2;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    font-size: 14px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+}
+
+/* ================================
+   Navigation
+   ================================ */
+
+.navbar {
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    position: static;
+    width: 100%;
+}
+
+.navbar .container {
+    display: block;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    text-align: left;
+}
+
+.nav-brand {
+    margin-bottom: var(--spacing-sm);
+}
+
+.nav-brand a {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-md);
+    padding-left: 0;
+}
+
+.nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.nav-link.active {
+    text-decoration: none;
+}
+
+.nav-link.active::before {
+    content: '> ';
+}
+
+.nav-link::before {
+    content: '  ';
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text-primary);
+}
+
+/* ================================
+   Hero Section (Landing Page)
+   ================================ */
+
+.hero {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: auto;
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-content {
+    max-width: 800px;
+    text-align: left;
+}
+
+.hero-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-sm) 0;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: 0.05em;
+}
+
+.hero-subtitle::before {
+    content: 'Author: ';
+}
+
+.hero-description {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-secondary);
+}
+
+.hero-description::before {
+    content: 'Abstract: ';
+    display: block;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+/* ================================
+   Page Content Layout
+   ================================ */
+
+.page-content {
+    padding: 3rem 0 4rem;
+    min-height: calc(100vh - 200px);
+}
+
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-primary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-sm) 0;
+}
+
+.page-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* ================================
+   Footer
+   ================================ */
+
+.footer {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    padding: var(--spacing-lg) 0;
+    text-align: left;
+    border-top: 1px solid var(--border-color);
+    margin-top: var(--spacing-xl);
+    font-size: 0.85rem;
+}
+
+.footer .container {
+    display: block;
+}
+
+.footer p {
+    margin-bottom: var(--spacing-xs);
+}
+
+.social-links {
+    display: block;
+    margin-top: var(--spacing-sm);
+}
+
+.social-links::before {
+    content: 'Contact: ';
+    display: block;
+    margin-bottom: var(--spacing-xs);
+}
+
+.social-links a {
+    color: var(--text-primary);
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.social-links a::before {
+    content: '  - ';
+}
+
+/* ================================
+   Responsive Design
+   ================================ */
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        flex-direction: column;
+        background-color: var(--bg-primary);
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+        padding: var(--spacing-lg) 0;
+        gap: 0;
+    }
+
+    .nav-menu li {
+        padding: var(--spacing-sm) 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .page-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+
+    .page-title {
+        font-size: 1.5rem;
+    }
+}

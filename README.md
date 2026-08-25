@@ -17,5 +17,3 @@ jekyll serve
 ```bash
 git push origin main
 ```
-
-Site is live at `https://blackgauss.github.io`. In repo Settings → Pages, ensure the source is **Deploy from a branch**, branch `main` at `/ (root)`.
