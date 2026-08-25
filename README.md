@@ -1,23 +1,19 @@
-# blackgauss.github.io
+# Notes on Adtech & Systems
 
-Static portfolio site.
+A plain-text notebook on distributed systems and advertising engineering, rendered with GitHub Pages' native Jekyll engine.
 
 ## Setup
 
-Edit content in `data/config.js`, then push to GitHub.
+Write Markdown posts as `*.md` files with YAML front matter (`layout: default`), then push. GitHub Pages builds and serves them with no local tooling.
 
 ## Local Development
 
 ```bash
-python -m http.server 8000
+jekyll serve
 ```
 
 ## Deploy
 
 ```bash
-git add .
-git commit -m "Update"
 git push origin main
 ```
-
-Site will be live at `https://blackgauss.github.io`
