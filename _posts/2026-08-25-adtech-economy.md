@@ -23,21 +23,32 @@ I graduated with a B.S. in Mathematics from Caltech in June 2025 and started wor
 
 One may be not surpised that I found work as an MLE. I am specifically an MLE at an advertising technology (adtech) company. The advertising qualifier is far more important than the machine learning qualifer. 
 
-There is a small group of experts in machine learning for advertising. Those experts power some of the highest revenue companies in the world such as TikTok, Meta, and Google. I say this to emphasize that advertising affects us all. As such, I find it important to document what I have learned and what I think should be accesible to others. In particular, those who are far removed from the industry of advertising but would like to know more from the inside.
+There is a small group of experts in machine learning for advertising. Those experts power some of the highest revenue companies in the world such as TikTok, Meta, and Google. I say this to emphasize that advertising affects us all. As an example, advertising accounts for more than 97% of Meta's revenue. As such, I find it important to document what I have learned and what I think should be accesible to others. In particular, those who are far removed from the industry of advertising but would like to know more from the inside.
 
 ## Some History
+
+I am going to spin a narrative thread throughout this history.
+
+
+1809: Gauss publishes a paper using least squares
+1865: James Clerk Maxwell publishes A Dynamical Theory of the Electromagnetic Field
 March 6, 1876: Alexander Graham Bell is awarded patent for the telephone.
 1877: Creation of Bell Telephone Company
 1893: Patent for Telephone Expires
 1899: AT&T buys American Bell's assets
+1907: Thermionic triode (vacuum tube) is invented.
 1925: Mervin J. Kelly joins bell labs
 1936: Turing publishes "On Computable Numbers, with an Application to the Entscheidungsproblem"
 1945: Electronic Numerical Integrator and Computer is completed
 1946: George Devol files a patent for the first static magnetic memory
+1947: Point contact transistor invented at Bell labs.
 1948: Claude Shannon publishes "A Mathematical Theory of Communication"
+1957: FORTRAN is created by IBM
 1959: Christopher Strachey files patent for time-sharing
 1969: UNIX development starts
+1972: C programming language is created
 1974: Vint Cerf and Bob Kahn introduce TCP
+1986: "Learning representations by back-propagating errors" is published
 1989: Tim Berners Lee proposes hypertext
 1994: AT&T first banner ad
 1995: DoubleClick is founded
@@ -54,9 +65,12 @@ March 6, 1876: Alexander Graham Bell is awarded patent for the telephone.
 2010: Matei Zaharia open sources Spark.
 2012: Facebook IPOs
 2013: Quantcast File System is Published
+2016: ByteDance launches Tiktok Precursor
+2017: Attention is all you need is released
 2018: AT&T acquire AppNexus for $1.6 billion
+2022: ChatGPT launches
 
-## What Is Advertisement?
+^ The above will show the history of computing, then to distributed computing over computing networks. Then the internet and web leading to big data. 
 <!--
 What comes to mind when you think of an advertisment? I think fondly of childhood television advertisments. However, I understand that fondness does not age well as you become a consumer. Perhaps you are rightfully reminded of annoying attempts to solicit your money. Whatever your relationship with advertising is, I think you'll find it useful to understand advertising. Because we all carry so many opinions about ads, I will prepare a semantical cleanroom in order to be clear about what we are talking about when we say advertisement. Here is what advertising is without business incentive.
 -->
@@ -65,7 +79,7 @@ Communication across spacetime is absolutely essential to human progress. The Am
 
 It is only fitting that AT&T is credited with the first clickable digital banner ad on October 27, 1994 on hotwired.com.
 
-There is a market structure
+## What Is Advertisement?
 Advertisement is the _the act or process of making something known to someone_ (cite Merriam-Webster). 
 
 Advertising Technology (Adtech) is the _practical application of scientific knowledge_ to advertisement. This includes the creation and development of machines for advertisement. Personal computers, mobile phones, and connected TVs are the primary devices which host the channels to deliver digital advertisements to users. These channels include the open web, social media, connected TV, and mobile games.
