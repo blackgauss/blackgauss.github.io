@@ -30,45 +30,45 @@ There is a small group of experts in machine learning for advertising. Those exp
 I am going to spin a narrative thread throughout this history.
 
 
-1809: Gauss publishes a paper using least squares
-1865: James Clerk Maxwell publishes A Dynamical Theory of the Electromagnetic Field
-March 6, 1876: Alexander Graham Bell is awarded patent for the telephone.
-1877: Creation of Bell Telephone Company
-1893: Patent for Telephone Expires
-1899: AT&T buys American Bell's assets
-1907: Thermionic triode (vacuum tube) is invented.
-1925: Mervin J. Kelly joins bell labs
-1936: Turing publishes "On Computable Numbers, with an Application to the Entscheidungsproblem"
-1945: Electronic Numerical Integrator and Computer is completed
-1946: George Devol files a patent for the first static magnetic memory
-1947: Point contact transistor invented at Bell labs.
-1948: Claude Shannon publishes "A Mathematical Theory of Communication"
-1957: FORTRAN is created by IBM
-1959: Christopher Strachey files patent for time-sharing
-1969: UNIX development starts
-1972: C programming language is created
-1974: Vint Cerf and Bob Kahn introduce TCP
-1986: "Learning representations by back-propagating errors" is published
-1989: Tim Berners Lee proposes hypertext
-1994: AT&T first banner ad
-1995: DoubleClick is founded
-1998: "Method for Node Ranking in a Linked Database" patent is filed. Google is founded. 
-1999: Apache Software Foundation is started
-2000: Google AdWords launches
-2003: Google File System Paper is published
-2004: MapReduce paper is published.
-2005?: Apache Nutch has a map reduce and distributed file system implementation 
-2005: Brian Kelley launches first ad exchange.
-2006: Quantcast is founded
-2007: AppNexus is founded. 
-2008: Google acquires DoubleClick for $3.1 billion
-2010: Matei Zaharia open sources Spark.
-2012: Facebook IPOs
-2013: Quantcast File System is Published
-2016: ByteDance launches Tiktok Precursor
-2017: Attention is all you need is released
-2018: AT&T acquire AppNexus for $1.6 billion
-2022: ChatGPT launches
+- 1809: Gauss publishes a paper using least squares
+- 1865: James Clerk Maxwell publishes A Dynamical Theory of the Electromagnetic Field
+- March 6, 1876: Alexander Graham Bell is awarded patent for the telephone.
+- 1877: Creation of Bell Telephone Company
+- 1893: Patent for Telephone Expires
+- 1899: AT&T buys American Bell's assets
+- 1907: Thermionic triode (vacuum tube) is invented.
+- 1925: Mervin J. Kelly joins bell labs
+- 1936: Turing publishes "On Computable Numbers, with an Application to the Entscheidungsproblem"
+- 1945: Electronic Numerical Integrator and Computer is completed
+- 1946: George Devol files a patent for the first static magnetic memory
+- 1947: Point contact transistor invented at Bell labs.
+- 1948: Claude Shannon publishes "A Mathematical Theory of Communication"
+- 1957: FORTRAN is created by IBM
+- 1959: Christopher Strachey files patent for time-sharing
+- 1969: UNIX development starts
+- 1972: C programming language is created
+- 1974: Vint Cerf and Bob Kahn introduce TCP
+- 1986: "Learning representations by back-propagating errors" is published
+- 1989: Tim Berners Lee proposes hypertext
+- 1994: AT&T first banner ad
+- 1995: DoubleClick is founded
+- 1998: "Method for Node Ranking in a Linked Database" patent is filed. Google is founded. 
+- 1999: Apache Software Foundation is started
+- 2000: Google AdWords launches
+- 2003: Google File System Paper is published
+- 2004: MapReduce paper is published.
+- 2005?: Apache Nutch has a map reduce and distributed file system implementation 
+- 2005: Brian Kelley launches first ad exchange.
+- 2006: Quantcast is founded
+- 2007: AppNexus is founded. 
+- 2008: Google acquires DoubleClick for $3.1 billion
+- 2010: Matei Zaharia open sources Spark.
+- 2012: Facebook IPOs
+- 2013: Quantcast File System is Published
+- 2016: ByteDance launches Tiktok Precursor
+- 2017: Attention is all you need is released
+- 2018: AT&T acquire AppNexus for $1.6 billion
+- 2022: ChatGPT launches
 
 ^ The above will show the history of computing, then to distributed computing over computing networks. Then the internet and web leading to big data. 
 <!--
