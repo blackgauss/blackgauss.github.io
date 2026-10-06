@@ -76,3 +76,16 @@ single hot counter. And it ties back to the landscape: to know the marginal
 cost of the next percentile of supply you need the *distribution* of winning
 prices, so the bid-landscape model isn't just for shading — it's pacing's
 sensing apparatus too.
+
+## References
+
+1. Xu, Z. et al. (Tencent). "A Practical Guide to Budget Pacing." arXiv:2503.06942
+2. Zhang, J. et al. (2016). "Feedback Control of Real-Time Display Advertising." *WSDM*. doi:10.1145/2835776.2835843, arXiv:1603.01055
+3. Agarwal, A. et al. (2014). "Budget Pacing for Targeted Online Advertisements at LinkedIn." *KDD*. doi:10.1145/2623330.2623366
+4. Balseiro, S., Lu, H. & Mirrokni, V. (2021). "Dual Mirror Descent-Based Online Budget Pacing." *Operations Research* 71(1):101–119. doi:10.1287/opre.2021.2242, arXiv:2011.10124
+5. Balseiro, S. et al. (2023). "A Field Guide for Pacing Budget and ROS Constraints." *KDD*. arXiv:2302.08530
+6. Conitzer, V., Kroer, C., Sodomka, E. & Stier-Moses, N. (2020+). "Multiplicative Pacing Equilibria." *Management Science* 70(2). doi:10.1287/mnsc.2022.4310, arXiv:1811.07166
+7. Hajiaghayi, M. & Springer, R. (2022). "Analysis of a Learning Based Algorithm for Budget Pacing." arXiv:2205.13330
+8. Chen, X., Kroer, C. & Kumar, A. (2023). "The Complexity of Pacing for Second-Price Auctions." *Mathematics of OR*. arXiv:2103.13969
+9. Yang, X. et al. (2019). "Bid Optimization by Multivariable Control in Display Advertising." *KDD*. doi:10.1145/3292500.3330681
+10. Ghosh, S. et al. (2019). "Scalable Bid Landscape Forecasting in Real-time Bidding." *ECML-PKDD*. arXiv:2001.06587

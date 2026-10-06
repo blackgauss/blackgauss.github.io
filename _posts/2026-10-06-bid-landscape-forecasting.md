@@ -84,3 +84,17 @@ evaluates products and ratios of scalars, never an RNN. Train slow, serve
 cheap. And because the win/lose head is just a calibrated classifier and ANLP
 is just log-loss, every calibration discipline from the CTR literature applies
 verbatim: a landscape is a probability model first and an economics tool second.
+
+## References
+
+1. Zhang, W., Yuan, S. & Wang, J. (2014). "Optimal Real-Time Bidding for Display Advertising." *KDD*. doi:10.1145/2623330.2623633
+2. Cui, Z., Zhang, X., Wang, J. & Mao, C. (2011). "Bid Landscape Forecasting in Online Ad Exchange Marketplace." *KDD*. doi:10.1145/2020408.2020454
+3. Wu, Y., Chang, K.-W. & Wang, C. (2015). "Predicting Winning Price in Real Time Bidding with Censored Data." *KDD*, pp. 1305–1314.
+4. Wang, H., Ren, W. et al. (2016). "Functional Bid Landscape Forecasting for Display Advertising." *ECML-PKDD*, pp. 115–131.
+5. Wu, F. et al. (2018). "Deep Censored Learning of the Winning Price in the Real Time Bidding." *KDD*, pp. 2526–2535.
+6. Ghosh, S. et al. (2019). "Scalable Bid Landscape Forecasting in Real-time Bidding." *ECML-PKDD*. arXiv:2001.06587
+7. Ren, Q. et al. (2019). "Deep Landscape Forecasting for Real-time Bidding Advertising." *KDD*. doi:10.1145/3292500.3330870, arXiv:1905.03028. Code: https://github.com/rk2900/DLF
+8. Kaplan, E. L. & Meier, P. (1958). "Nonparametric Estimation from Incomplete Observations." *JASA* 53(282):457–481.
+9. Aouad, A. et al. (2019). "Market Segmentation Trees." arXiv:1906.01174
+10. Zhang, W. et al. (2014). "Real-Time Bidding Benchmarking with iPinYou Dataset." arXiv:1407.7073.
+11. Agarwal, A. et al. — survey, arXiv:2408.07685.

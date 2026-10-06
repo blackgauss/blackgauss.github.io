@@ -82,3 +82,15 @@ processing time, a network buffer, and a response-preparation floor again
 before the bidder sees anything. Honor `tmax` at your own wire edge and
 you'll never be late; honor only the number you're handed and you'll still
 time out at the exchange. The clock is always the budget.
+
+## References
+
+1. IAB Tech Lab, *OpenRTB Version 2.6* (all §-level field citations). https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md
+2. IAB Tech Lab, *OpenRTB 2.x Implementation Guide* (`source.tid`, `schain`, `user.eids` match-methods). https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/implementation.md
+3. IAB, "SupplyChain object" implementation guide. https://github.com/InteractiveAdvertisingBureau/openrtb/blob/master/supplychainobject.md
+4. Prebid, "Timeouts." https://docs.prebid.org/features/timeouts.html
+5. Prebid Server, "`/openrtb2/auction` — Timeout." https://docs.prebid.org/prebid-server/endpoints/openrtb2/pbs-endpoint-auction.html
+6. Edelman, B., Ostrovsky, M. & Schwarz, M. (2007). "Internet Advertising and the Generalized Second-Price Auction." *American Economic Review* 97(1):242–59. doi:10.1257/aer.97.1.242
+7. Balseiro, S., Besbes, O. & Weintraub, G. (2015). "Repeated Auctions with Budgets in Ad Exchanges." *Management Science* 61(4):864–884. doi:10.1287/mnsc.2014.2022
+8. Gligorijevic, D. et al. (2020). "Bid Shading in The Brave New World of First-Price Auctions." *CIKM*. doi:10.1145/3340531.3412689 (preprint arXiv:2009.01360)
+9. PubMatic, "First Price Auctions & Auction Dynamics." https://pubmatic.com/blog/first-price-auctions-auction-dynamics/

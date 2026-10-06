@@ -63,3 +63,12 @@ Every impression, click, and conversion becomes a log line; logging alone is a
 streaming-infrastructure problem at Kafka scale. The bidder is the part that
 looks like a web server; the whole rest of the company exists to feed it and
 learn from it.
+
+## References
+
+1. IAB Tech Lab, *OpenRTB 2.6*, §2 (transport), §3.2.1 (`tmax` definition). https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md
+2. Prebid, "Timeouts" (failsafe / auction / s2s timeout taxonomy, tmax adjustment). https://docs.prebid.org/features/timeouts.html
+3. Prebid Server, "`/openrtb2/auction` endpoint — Timeout section" (`tmax_adjustments`, `bidder_tmax` formulas). https://docs.prebid.org/prebid-server/endpoints/openrtb2/pbs-endpoint-auction.html
+4. Wikipedia, "Demand-side platform" ("20–400 ms to decision"). https://en.wikipedia.org/wiki/Demand-side_platform
+5. Wikipedia, "Real-time bidding" ("<100 ms" per-impression valuation; MFA/fraud). https://en.wikipedia.org/wiki/Real-time_bidding
+6. Yuan, S., Wang, J. & Zhao, X. (2013). "Real-time Bidding for Online Advertising: Measurement and Analysis." arXiv:1306.6542. doi:10.48550/arXiv.1306.6542

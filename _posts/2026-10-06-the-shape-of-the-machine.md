@@ -62,3 +62,12 @@ architecture is not shaped by taste. It is shaped by the fact that the supply
 is perishable inside one human blink, and the price of being wrong is paid, at
 scale, immediately, in cash. That is a strange and beautiful design constraint,
 and you can see its fingerprints on every box in the diagram.
+
+## References
+
+1. IAB Tech Lab, *OpenRTB Version 2.6*. https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md
+2. Zhang, W., Yuan, S. & Wang, J. (2014). "Optimal Real-Time Bidding for Display Advertising." *KDD*. doi:10.1145/2623330.2623633
+3. Ren, Q. et al. (2019). "Deep Landscape Forecasting for Real-time Bidding Advertising." *KDD*. arXiv:1905.03028 (landscape as cached offline artifact)
+4. McMahan, H. B. et al. (2013). "Ad Click Prediction: a View from the Trenches." *KDD*. doi:10.1145/2487575.2488200 (train-slow-serve-cheap memory engineering)
+5. Chapelle, O. (2014). "Modeling Delayed Feedback in Display Advertising." *KDD*. doi:10.1145/2623330.2623634 (the event-schema dependency)
+6. Balseiro, S., Lu, H. & Mirrokni, V. (2021). "Dual Mirror Descent-Based Online Budget Pacing." *Operations Research* 71(1):101–119. doi:10.1287/opre.2021.2242

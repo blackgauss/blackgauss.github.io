@@ -89,3 +89,17 @@ economy to the theory crowd; the theory was in Vickrey's 1961 paper. It handed
 an advantage to whoever could estimate hazard rates on a billion heterogeneous
 auctions a day, and that's an infrastructure advantage, not an idea advantage —
 the only kind programmatic seems to hand out.
+
+## References
+
+1. Vickrey, W. (1961). "Counterspeculation, Auctions, and Competitive Sealed Tenders." *Journal of Finance* 16(1). doi:10.1111/j.1540-6261.1961.tb02789.x
+2. Myerson, R. (1981). "Optimal Auction Design." *Mathematics of Operations Research* 6(1). doi:10.1287/moor.6.1.58
+3. Maskin, E. & Riley, J. (2000). "Asymmetric Auctions." *Review of Economic Studies*. doi:10.1111/1467-937X.00137
+4. Balseiro, S., Besbes, O. & Weintraub, G. (2015). "Repeated Auctions with Budgets in Ad Exchanges." *Management Science* 61(4):864–884. doi:10.1287/mnsc.2014.2022
+5. Gligorijevic, D. et al. (2020). "Bid Shading in The Brave New World of First-Price Auctions." *CIKM*. doi:10.1145/3340531.3412689 (preprint arXiv:2009.01360)
+6. Zhou, Y. et al. (2021). "An Efficient Deep Distribution Network for Bid Shading in First-Price Auctions." *KDD*. doi:10.1145/3447548.3467167, arXiv:2107.06650
+7. Conitzer, V., Kroer, C., Sodomka, E. & Stier-Moses, N. (2020+). "Multiplicative Pacing Equilibria." *Management Science* 70(2). doi:10.1287/mnsc.2022.4310, arXiv:1811.07166
+8. Zhang, A. (2017). "Nonparametric estimation of the bidding function in first-price auctions with entry and observable outliers." *Economics Letters*. doi:10.1016/j.econlet.2016.11.001 (shape-constrained anchor)
+9. Han, D., Zhou, T. & Weissman, T. (2021/24). "Optimal No-Regret Learning in Repeated First-Price Auctions." *Operations Research*. doi:10.1287/opre.2020.0282
+10. IAB Tech Lab, *OpenRTB 2.6*, §3.2.1 (`at`), §4.4 (macros). https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md
+11. Google Ad Manager first-price migration (2019); PubMatic, "First Price Auctions & Auction Dynamics." https://pubmatic.com/blog/first-price-auctions-auction-dynamics/

@@ -101,3 +101,20 @@ treadmill has deposited the frontier: identity resolution, first-party and
 signed data, server-side auctions, on-device or contextual inference. Each era
 solved the old constraint; each moved the moat inward one layer. Data is the
 last layer that hasn't leaked.
+
+## References
+
+1. Wikipedia, "Online advertising." https://en.wikipedia.org/wiki/Online_advertising
+2. Wikipedia, "DoubleClick." https://en.wikipedia.org/wiki/DoubleClick
+3. Wikipedia, "Ad exchange." https://en.wikipedia.org/wiki/Ad_exchange
+4. Knapp, R. & Blanco, M. (2006). "Auction For Each Individual Ad Impression." US patent application US 2008/0162329A1 (pub. 2008-07-03).
+5. Edelman, B., Ostrovsky, M. & Schwarz, M. (2007). "Internet Advertising and the Generalized Second-Price Auction." *American Economic Review* 97(1):242–59. doi:10.1257/aer.97.1.242
+6. IAB Tech Lab, "OpenRTB (Real-Time Bidding)," incl. version history table. https://iabtechlab.com/standards/openrtb/
+7. Yuan, S., Wang, J. & Zhao, X. (2013). "Real-time Bidding for Online Advertising: Measurement and Analysis." arXiv:1306.6542. doi:10.48550/arXiv.1306.6542
+8. Cui, Z., Zhang, X., Wang, J. & Mao, C. (2011). "Bid Landscape Forecasting in Online Ad Exchange Marketplace." *KDD*. doi:10.1145/2020408.2020454
+9. Zhang, W., Yuan, S. & Wang, J. (2014). "Real-Time Bidding Benchmarking with iPinYou Dataset." arXiv:1407.7073.
+10. Zhang, W., Yuan, S. & Wang, J. (2014). "Optimal Real-Time Bidding for Display Advertising." *KDD*. doi:10.1145/2623330.2623633
+11. Balseiro, S., Besbes, O. & Weintraub, G. (2015). "Repeated Auctions with Budgets in Ad Exchanges." *Management Science* 61(4):864–884. doi:10.1287/mnsc.2014.2022
+12. ICO, *Update report into adtech and real time bidding*, 2019-06-20.
+13. Belgian DPA, Decision 21/2022 regarding IAB Europe's TCF, 2022-02-02.
+14. Veale, M. & Zuiderveen Borgesius, F. (2022). "AdTech and Real-Time Bidding under European Data Protection Law." *German Law Journal*. doi:10.31235/osf.io/wg8fq

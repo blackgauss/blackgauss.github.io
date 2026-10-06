@@ -101,3 +101,16 @@ conversions delayed at click scale (two orders less data). You never join them
 in a long-window pipeline; you multiply. The cleanest example I know of a
 factorization chosen because *of the data's latency*, then the ML following the
 schema into the architecture.
+
+## References
+
+1. Rendle, S. (2010). "Factorization Machines." *IEEE ICDM*. doi:10.1109/ICDM.2010.127
+2. Juan, Y. et al. (2017). "Field-aware Factorization Machines in a Real-world Online Advertising System." *WWW*. arXiv:1701.04099
+3. Cheng, H.-T. et al. (2016). "Wide & Deep Learning for Recommender Systems." *DLRS @ ICML*. doi:10.1145/2988450.2988454, arXiv:1606.07792
+4. Wang, R. et al. (2017). "Deep & Cross Network for Ad Click Predictions." *ADS@KDD*. arXiv:1708.05123
+5. Zhou, G. et al. (2018). "Deep Interest Network for Click-Through Rate Prediction." *KDD*. doi:10.1145/3219819.3219823, arXiv:1706.06978
+6. Lian, J. et al. (2018). "xDeepFM: Combining Explicit and Implicit Feature Interactions for Recommender Systems." *SIGIR*. arXiv:1803.05170
+7. McMahan, H. B. et al. (2013). "Ad Click Prediction: a View from the Trenches." *KDD*. doi:10.1145/2487575.2488200. PDF: https://research.google.com/pubs/archive/41159.pdf
+8. Chapelle, O. (2014). "Modeling Delayed Feedback in Display Advertising." *KDD*. doi:10.1145/2623330.2623634
+9. Niculescu-Mizil, A. & Caruana, R. (2005). "Predicting Good Probabilities with Supervised Learning." *ICML*.
+10. Schnabel, T. et al. (2016). "Recommendations as Treatments: Debiasing Learning and Evaluation." *ICML*. arXiv:1602.05352

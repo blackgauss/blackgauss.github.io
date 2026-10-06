@@ -95,3 +95,14 @@ Three things I don't yet know well enough to write down as settled:
 
 The mechanics of the auction itself get their own entry; the latency
 constraints, another.
+
+## References
+
+1. IAB Tech Lab, "OpenRTB (Real-Time Bidding)." https://iabtechlab.com/standards/openrtb/
+2. Wikipedia, "Real-time bidding." https://en.wikipedia.org/wiki/Real-time_bidding
+3. Wikipedia, "Demand-side platform." https://en.wikipedia.org/wiki/Demand-side_platform
+4. Wikipedia, "DoubleClick." https://en.wikipedia.org/wiki/DoubleClick
+5. ICO, *Update report into adtech and real time bidding*, 2019-06-20.
+6. Veale, M. & Zuiderveen Borgesius, F. (2022). "AdTech and Real-Time Bidding under European Data Protection Law." *German Law Journal*. doi:10.31235/osf.io/wg8fq
+7. Edelman, B., Ostrovsky, M. & Schwarz, M. (2007). "Internet Advertising and the Generalized Second-Price Auction." *American Economic Review* 97(1):242–59. doi:10.1257/aer.97.1.242
+8. Balseiro, S., Besbes, O. & Weintraub, G. (2015). "Repeated Auctions with Budgets in Ad Exchanges." *Management Science* 61(4):864–884. doi:10.1287/mnsc.2014.2022
