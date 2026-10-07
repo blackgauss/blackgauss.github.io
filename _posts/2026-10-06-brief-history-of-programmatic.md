@@ -52,8 +52,11 @@ field's most reliable pattern.**
 Three nearly simultaneous threads produced real-time bidding. The **Right
 Media Exchange (2005, Brian O'Kelley)** built the first modern ad exchange:
 inventory from multiple publishers auctioned in software, with RTB-style
-prediction, budgeting, and pacing at the buyer; Yahoo acquired it in 2007 for
-a widely-reported ~$680M (pending primary; the secondary chain is stable).
+prediction, budgeting, and pacing at the buyer; Yahoo acquired it in 2007,
+buying the remaining equity for "approximately $680 million" in Yahoo's own
+8-K (filed 2007-05-02), closed July 11, booked at a $526M GAAP purchase price
+in Yahoo's FY2007 10-K — the $680M headline and the $526M book number are not
+in conflict; they count different things.
 **Knapp & Blanco at Strategic Data Corp** filed in 2006 the patent that
 defines the concept — *Auction For Each Individual Ad Impression*, US
 2008/0162329A1 — claims covering auctioning each impression in real time among
@@ -101,7 +104,15 @@ RTB spend $23.5B (2018) to roughly $57B (2023).
 At the same time, *the auction became legible*. Yuan, Wang & Zhao (2013) was
 the first public measurement study of RTB from a DSP's own logs: winning-price
 distributions, the censoring problem — you only observe the clearing price
-when you win — and the empirical finding that CPM/volume behave log-normally.
+when you win — and a distributional result that aged better for being
+negative: the log-normal price hypothesis *fails* when you test it where it's
+supposed to live. Splitting 50 placements × 160 days into ~192k
+⟨placement, hour⟩ segments, under 1% passed Shapiro–Wilk or Anderson–Darling
+at segment level, no matter the bidder or the hour's volume. Aggregate pools
+can still look log-normal-ish, which is why the assumption kept haunting the
+parametric literature; per-segment, it was dead on arrival, and that is the
+field-measured reason the nonparametric lines (histogram leaves, mixtures,
+distribution-free ladders) won.
 Cui et al. (KDD 2011) had already named the object: the **bid landscape**, the
 win-rate-versus-bid curve, and the censored-data estimation problem it poses.
 And in 2014 the **iPinYou dataset** — 64.7M bid request logs published with a
@@ -174,9 +185,13 @@ than the runner-up of a serial one. The two changes compounded:
    truthfully-solvable mechanisms (Aggarwal et al., 2019); the *pacing
    equilibrium* in first-price markets exists and is unique (Conitzer et
    al., EC 2019 / Management Science 2022); the first-vs-second welfare gap
-   under autobidding got bounded (Deng et al., NeurIPS 2024); empirical
-   welfare effects were measured in live markets as the migration happened
-   (Conitzer, Kong, Li, Shi, Management Science 2022).
+   under autobidding got bounded (Deng et al., NeurIPS 2024); the migration
+   itself got measured with difference-in-differences on staggered publisher
+   switches — revenue per sold impression jumped 25–70% of pre-treatment
+   levels at the switch, then reverted toward second-price levels as bidders
+   learned to shade (Goke, Weintraub, Mastromonaco & Seljan, EC 2022), with
+   soft floors and supply-side competition as the adoption channel
+   (Despotakis, Ravi & Sayedi, *JMR* 2021).
 4. **Supply-path forensics**: signed bid requests, `schain`/sellers.json/
    ads.txt — an Era-2 deliverable implemented as an Era-4 emergency — because
    the stack had grown four to six intermediaries deep and the buyer wanted
@@ -243,39 +258,45 @@ race and more like a legal-and-identity one.
 
 IAB Tech Lab's OpenRTB version history and the spec PDFs on GitHub; US patent
 2008/0162329A1 from USPTO/Google Patents; DoubleClick's 2004 10-K on SEC
-EDGAR for DART and ASP-model economics; FTC docket P074102 and EU case
-COMP.52577 for the 2008 deal; the Belgian DPA's Decision 21/2022 itself, with
-Veale et al.'s analyses. The trade numbers ($680M, spend series, percentages)
-travel through Wikipedia and Statista chains and deserve primary
-confirmation before I repeat them at anyone important — which is written here
-mostly so that *future me* doesn't forget that promise.
+EDGAR for DART and ASP-model economics; Yahoo's own 8-K of 2007-05-02 (the
+Right Media press release, "approximately $680 million") and its FY2007 10-K
+Note 3 (the $526M GAAP figure) on the same EDGAR box; FTC docket P074102 and
+EU case COMP.52577 for the 2008 deal; the Belgian DPA's Decision 21/2022
+itself, with Veale et al.'s analyses. The remaining trade numbers (spend
+series, percentages) still travel through Wikipedia and Statista chains and
+deserve primary confirmation before I repeat them at anyone important —
+which is written here mostly so that *future me* doesn't forget that promise.
 
 ## References
 
 1. IAB Tech Lab, "OpenRTB (Real-Time Bidding)," incl. full version history. https://iabtechlab.com/standards/openrtb/
 2. Knapp, R. & Blanco, M. (2006). "Auction For Each Individual Ad Impression." US 2008/0162329A1, published 2008-07-03. https://patents.google.com/patent/US20080162329A1
 3. Wikipedia, "DoubleClick." https://en.wikipedia.org/wiki/DoubleClick
-4. Wikipedia, "Ad exchange" (History: Right Media 2005, O'Kelley; Yahoo $680M; Knapp/Blanco filing). https://en.wikipedia.org/wiki/Ad_exchange
-5. Wikipedia, "Online advertising" (early banner/search milestones). https://en.wikipedia.org/wiki/Online_advertising
-6. Wikipedia, "Real-time bidding" (spend series via Statista; privacy & fraud sections). https://en.wikipedia.org/wiki/Real-time_bidding
-7. Edelman, B., Ostrovsky, M. & Schwarz, M. (2007). "Internet Advertising and the Generalized Second-Price Auction." *American Economic Review* 97(1):242–59. doi:10.1257/aer.97.1.242
-8. Yuan, S., Wang, J. & Zhao, X. (2013). "Real-time Bidding for Online Advertising: Measurement and Analysis." arXiv:1306.6542. doi:10.48550/arXiv.1306.6542
-9. Cui, Z., Zhang, X., Li, W. & Mao, C. (2011). "Bid Landscape Forecasting in Online Ad Exchange Marketplace." *KDD*. doi:10.1145/2020408.2020454
-10. Zhang, W., Yuan, S., Wang, J. & Shen, X. (2014). "Real-Time Bidding Benchmarking with iPinYou Dataset." arXiv:1407.7073
-11. Zhang, W., Yuan, S. & Wang, J. (2014). "Optimal Real-Time Bidding for Display Advertising." *KDD*. doi:10.1145/2623330.2623633
-12. Balseiro, S., Besbes, O. & Weintraub, G. (2015). "Repeated Auctions with Budgets in Ad Exchanges." *Management Science* 61(4). doi:10.1287/mnsc.2014.2022
-13. Zhang, J. et al. (2016). "Feedback Control of Real-Time Display Advertising." *WSDM*. doi:10.1145/2835776.2835843, arXiv:1603.01055
-14. Cai, H., Ren, K., Zhang, W. & Wang, K. (2017). "Real-Time Bidding by Reinforcement Learning in Display Advertising." *WSDM*. doi:10.1145/3018661.3018702, arXiv:1701.02490
-15. McMahan, H. B. et al. (2013). "Ad Click Prediction: a View from the Trenches." *KDD*. doi:10.1145/2487575.2488200
-16. Chapelle, O. (2014). "Modeling Delayed Feedback in Display Advertising." *KDD*. doi:10.1145/2623330.2623634
-17. Rendle, S. (2010). "Factorization Machines." *IEEE ICDM*. doi:10.1109/ICDM.2010.127
-18. Ren, Q. et al. (2019). "Deep Landscape Forecasting for Real-time Bidding Advertising." *KDD*. doi:10.1145/3292500.3330870, arXiv:1905.03028
-19. Aggarwal, G., Badanidiyuru, A. & Mehta, A. (2019). "Autobidding with Constraints." *WINE*. doi:10.1007/978-3-030-35389-6_2
-20. Conitzer, V., Kroer, C., Sodomka, E. & Stier-Moses, N. (2019/2022). "Pacing Equilibrium in First-Price Auction Markets." *EC 2019*, doi:10.1145/3328526.3329600; journal version *Management Science* 70(2), 2024. doi:10.1287/mnsc.2022.4310, arXiv:1811.07166
-21. ICO, *Update report into adtech and real time bidding*, 2019-06-20.
-22. Belgian DPA, Decision 21/2022 re IAB Europe TCF, 2022-02-02.
-23. Veale, M. & Zuiderveen Borgesius, F. (2022). "AdTech and Real-Time Bidding under European Data Protection Law." *German Law Journal*. doi:10.31235/osf.io/wg8fq
-24. Veale, M., Nouwens, K. & Santos, C.T. (2022). "Impossible Asks: Can the Transparency and Consent Framework Ever Authorise Real-Time Bidding After the Belgian DPA Decision?" *TechReg*. doi:10.26116/techreg.2022.002
-25. Prebid, "Introduction to Prebid" (header bidding launch, adapters, parallel bidders). https://docs.prebid.org/overview/intro.html
-26. Kochalski et al. (2021). "Detecting Ad Fraud and Financial Losses in Digital Advertising." (AdKDD; citation chain via secondary sources — arXiv ID unresolvable this pass, flagged rather than fabricated.)
-27. Aggarwal, G., Perlroth, M. & Zhao, J. (2023). "Multi-Channel Auction Design in the Autobidding World." *EC*. doi:10.1145/3580507.3597707
+4. Wikipedia, "Ad exchange" (History: Right Media 2005, O'Kelley; Knapp/Blanco filing). https://en.wikipedia.org/wiki/Ad_exchange
+5. Yahoo! Inc., Form 8-K (filed 2007-05-02; exhibit: Right Media press release, 'approximately $680 million' for remaining equity). https://www.sec.gov/Archives/edgar/data/1011006/000115752307003677/
+6. Yahoo! Inc., Form 10-K FY2007 (filed 2008-02-27; Note 3: Right Media GAAP purchase price $526M). https://www.sec.gov/Archives/edgar/data/1011006/000089161807000108/
+7. Wikipedia, "Online advertising" (early banner/search milestones). https://en.wikipedia.org/wiki/Online_advertising
+8. Wikipedia, "Real-time bidding" (spend series via Statista; privacy & fraud sections). https://en.wikipedia.org/wiki/Real-time_bidding
+9. Edelman, B., Ostrovsky, M. & Schwarz, M. (2007). "Internet Advertising and the Generalized Second-Price Auction." *American Economic Review* 97(1):242–59. doi:10.1257/aer.97.1.242
+10. Yuan, S., Wang, J. & Zhao, X. (2013). "Real-time Bidding for Online Advertising: Measurement and Analysis." arXiv:1306.6542. doi:10.48550/arXiv.1306.6542
+11. Cui, Y., Zhang, R., Li, W. & Mao, J. (2011). "Bid Landscape Forecasting in Online Ad Exchange Marketplace." *KDD*. doi:10.1145/2020408.2020454
+12. Zhang, W., Yuan, S., Wang, J. & Shen, X. (2014). "Real-Time Bidding Benchmarking with iPinYou Dataset." arXiv:1407.7073
+13. Zhang, W., Yuan, S. & Wang, J. (2014). "Optimal Real-Time Bidding for Display Advertising." *KDD*. doi:10.1145/2623330.2623633
+14. Balseiro, S., Besbes, O. & Weintraub, G. (2015). "Repeated Auctions with Budgets in Ad Exchanges." *Management Science* 61(4). doi:10.1287/mnsc.2014.2022
+15. Zhang, W., Rong, Y., Wang, J., Zhu, T. & Wang, X. (2016). "Feedback Control of Real-Time Display Advertising." *WSDM*. doi:10.1145/2835776.2835843, arXiv:1603.01055
+16. Cai, H., Ren, K., Zhang, W. & Wang, K. (2017). "Real-Time Bidding by Reinforcement Learning in Display Advertising." *WSDM*. doi:10.1145/3018661.3018702, arXiv:1701.02490
+17. McMahan, H. B. et al. (2013). "Ad Click Prediction: a View from the Trenches." *KDD*. doi:10.1145/2487575.2488200
+18. Chapelle, O. (2014). "Modeling Delayed Feedback in Display Advertising." *KDD*. doi:10.1145/2623330.2623634
+19. Rendle, S. (2010). "Factorization Machines." *IEEE ICDM*. doi:10.1109/ICDM.2010.127
+20. Ren, Q. et al. (2019). "Deep Landscape Forecasting for Real-time Bidding Advertising." *KDD*. doi:10.1145/3292500.3330870, arXiv:1905.03028
+21. Aggarwal, G., Badanidiyuru, A. & Mehta, A. (2019). "Autobidding with Constraints." *WINE*. doi:10.1007/978-3-030-35389-6_2
+22. Conitzer, V., Kroer, C., Sodomka, E. & Stier-Moses, N. (2019/2022). "Pacing Equilibrium in First-Price Auction Markets." *EC 2019*, doi:10.1145/3328526.3329600; journal version *Management Science* 70(2), 2024. doi:10.1287/mnsc.2022.4310, arXiv:1811.07166
+23. ICO, *Update report into adtech and real time bidding*, 2019-06-20.
+24. Belgian DPA, Decision 21/2022 re IAB Europe TCF, 2022-02-02.
+25. Veale, M. & Zuiderveen Borgesius, F. (2022). "AdTech and Real-Time Bidding under European Data Protection Law." *German Law Journal*. doi:10.31235/osf.io/wg8fq
+26. Veale, M., Nouwens, K. & Santos, C.T. (2022). "Impossible Asks: Can the Transparency and Consent Framework Ever Authorise Real-Time Bidding After the Belgian DPA Decision?" *TechReg*. doi:10.26116/techreg.2022.002
+27. Prebid, "Introduction to Prebid" (header bidding launch, adapters, parallel bidders). https://docs.prebid.org/overview/intro.html
+28. Kochalski et al. (2021). "Detecting Ad Fraud and Financial Losses in Digital Advertising." (AdKDD; citation chain via secondary sources — arXiv ID unresolvable this pass, flagged rather than fabricated.)
+29. Aggarwal, G., Perlroth, M. & Zhao, J. (2023). "Multi-Channel Auction Design in the Autobidding World." *EC*. doi:10.1145/3580507.3597707
+30. Goke, I.J., Weintraub, G., Mastromonaco, A. & Seljan, M. (2022). "Bidders' Responses to Auction Format Change in Internet Display Advertising Auctions." *EC*. doi:10.1145/3490486.3538249, arXiv:2110.13814
+31. Despotakis, S., Ravi, R. & Sayedi, A. (2021). "First-Price Auctions in Online Display Advertising." *Journal of Marketing Research* 58(5). doi:10.1177/00222437211030201

@@ -56,9 +56,11 @@ table.
 
 **Ad Exchange.** Neutral-ish marketplace technology running the auction between
 many DSPs and many sellers — a stock exchange for impressions. Historical first
-mover: the Right Media Exchange, launched 2005, acquired by Yahoo in 2007 for
-roughly $680M (a figure that still wants a primary source; the secondary chain
-is stable). Google's AdX arrived via the DoubleClick acquisition — announced at
+mover: the Right Media Exchange, launched 2005, acquired by Yahoo in 2007 —
+"approximately $680 million" for the remaining equity per Yahoo's own 8-K,
+closed July 11 and booked at a $526M GAAP purchase price in Yahoo's FY2007
+10-K; the two figures coexist because they count different things, and both
+now sit on primary filings. Google's AdX arrived via the DoubleClick acquisition — announced at
 $3.1B in April 2007, closed March 2008 after FTC and EU clearance — and became
 the default liquidity venue of the industry.
 
@@ -218,3 +220,5 @@ and the machine-learning stack all have their own entries now.
 10. Edelman, B., Ostrovsky, M. & Schwarz, M. (2007). "Internet Advertising and the Generalized Second-Price Auction." *American Economic Review* 97(1):242–59. doi:10.1257/aer.97.1.242
 11. Balseiro, S., Besbes, O. & Weintraub, G. (2015). "Repeated Auctions with Budgets in Ad Exchanges." *Management Science* 61(4):864–884. doi:10.1287/mnsc.2014.2022
 12. The Trade Desk, Form 10-K (annual reports; revenue-recognition and take-rate framing). https://investors.thetradedesk.com
+13. Yahoo! Inc., Form 8-K (filed 2007-05-02; exhibit: Right Media press release, "approximately $680 million" for remaining equity). https://www.sec.gov/Archives/edgar/data/1011006/000115752307003677/
+14. Yahoo! Inc., Form 10-K FY2007 (filed 2008-02-27; Note 3: Right Media GAAP purchase price $526M). https://www.sec.gov/Archives/edgar/data/1011006/000089161807000108/

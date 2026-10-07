@@ -61,9 +61,17 @@ Forecasting in Online Ad Exchange Marketplace"** — which named the field.
 Match the incoming request to a request-type segment; reuse that segment's
 empirical price histogram, smoothed with a log-normal fit (the distributional
 assumption that all later papers attack). Simple, feature-blind-by-segment,
-surprisingly durable for coarse segmentation; log-normality survives today as
-a prior — the RTB measurement literature found empirical price and volume
-distributions behave roughly log-normally.
+surprisingly durable for coarse segmentation. Log-normality's standing is
+worth stating precisely: the RTB measurement literature's "roughly log-normal"
+observation is an *aggregate-pooling* fact, and it dissolves the moment you
+test it where forecasters actually use it — Yuan et al. (2013) split 50
+placements × 160 days into ~192k ⟨placement, hour⟩ segments and found
+**under 1% passed Shapiro–Wilk or Anderson–Darling**, no matter the bidder or
+the hour's volume. The fixed-form parametric era wasn't superseded because it
+was suboptimal; it was superseded because its premise fails ~99% of the time
+at segment level. (The paper notes bids "vary greatly throughout a day,"
+which is exactly why they split by hour — pool hard enough and normality in
+log-space looks fine again. That's the honest version.)
 
 **(2) 2015 — censored regression. Wu, Yeh & Chen, KDD, "Predicting Winning
 Price in Real Time Bidding with Censored Data."** Model `w = βᵀx + ε`, `ε ~
@@ -181,10 +189,10 @@ of saying the benchmark numbers measure estimation, not profit.
 
 1. Zhang, W., Yuan, S. & Wang, J. (2014). "Optimal Real-Time Bidding for Display Advertising." *KDD*. doi:10.1145/2623330.2623633
 2. Balseiro, S., Besbes, O. & Weintraub, G. (2015). "Repeated Auctions with Budgets in Ad Exchanges." *Management Science* 61(4):864–884. doi:10.1287/mnsc.2014.2022
-3. Cui, Z., Zhang, X., Li, W. & Mao, C. (2011). "Bid Landscape Forecasting in Online Ad Exchange Marketplace." *KDD*. doi:10.1145/2020408.2020454
-4. Wu, Y., Chang, K.-W. & Wang, C. (2015). "Predicting Winning Price in Real Time Bidding with Censored Data." *KDD*, 1305–1314.
-5. Wang, H. et al. (2016). "Functional Bid Landscape Forecasting for Display Advertising." *ECML-PKDD*, 115–131.
-6. Wu, Y., Yeh, C.-Y. & Chen, Y.-M. (2018). "Deep Censored Learning of the Winning Price in the Real Time Bidding." *KDD*, 2526–2535.
+3. Cui, Y., Zhang, R., Li, W. & Mao, J. (2011). "Bid Landscape Forecasting in Online Ad Exchange Marketplace." *KDD*. doi:10.1145/2020408.2020454
+4. Wu, W.C.-H., Yeh, M.-Y. & Chen, M.-S. (2015). "Predicting Winning Price in Real Time Bidding with Censored Data." *KDD*, 1305–1314.
+5. Wang, Y., Ren, K., Zhang, W., Wang, J. & Yu, Y. (2016). "Functional Bid Landscape Forecasting for Display Advertising." *ECML-PKDD*, 115–131.
+6. Wu, W.C.-H., Yeh, M.-Y. & Chen, M.-S. (2018). "Deep Censored Learning of the Winning Price in the Real Time Bidding." *KDD*, 2526–2535.
 7. Ghosh, A., Mitra, S., Sarkhel, S., Xie, J., Wu, G. & Swaminathan, S. (2019). "Scalable Bid Landscape Forecasting in Real-Time Bidding." *ECML-PKDD*. arXiv:2001.06587
 8. Ren, Q., Qin, X., Zheng, B., Yang, Z., Zhang, W. & Yu, Y. (2019). "Deep Landscape Forecasting for Real-time Bidding Advertising." *KDD*. doi:10.1145/3292500.3330870, arXiv:1905.03028. Code: https://github.com/rk2900/DLF
 9. Kaplan, E. L. & Meier, P. (1958). "Nonparametric Estimation from Incomplete Observations." *JASA* 53(282):457–481.

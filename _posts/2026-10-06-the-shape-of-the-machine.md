@@ -166,7 +166,7 @@ solution leaked to everyone:
 |---|---|---|---|
 | pre-2005 | ad-server scheduling; cookies make *audience* representable; GoTo/Overture/AdWords prove per-query auctions price inventory in software | — | — |
 | 2005–09 | the per-impression auction itself; ~100 ms budgets; pacing as distributed bookkeeping; N×M protocol hell | OpenRTB standardized 2010–17 | decision quality |
-| 2010–13 | the market was illegible — censoring, log-normal prices | Cui 2011 named the "bid landscape"; Yuan 2013 measured a live DSP; iPinYou 2014 made it a science with public logs | bidding algorithms |
+| 2010–13 | the market was illegible — censoring, prices assumed log-normal that testing later disproved at segment level | Cui 2011 named the "bid landscape"; Yuan 2013 measured a live DSP (and killed the log-normal premise, <1% of ⟨placement, hour⟩ segments passing normality tests); iPinYou 2014 made it a science with public logs | bidding algorithms |
 | 2013–16 | optimal bidding, pacing theory, CTR at scale | ORTB (KDD'14), FTRL paper, FFM/DIN/DCN, Chapelle — the great publication diffusion; pacing stopped being a differentiator by ~2017 | data volume for ML |
 | 2016–21 | the mechanism changed under everyone: first price 2019, header bidding flat waterfalls | shading papers published 2020–21; autobidding theory (uniform multipliers dominate) by 2019–21; schain/sellers.json forensics | mechanism response, identity |
 | 2019– | the data substrate taken away: GDPR enforcement reports, Belgian DPA voiding the consent framework, ITP/ATT, cookie saga | the responses (ID graphs, unified IDs, cohort/context reweighting) are public too | who holds first-party/consented data |
@@ -206,14 +206,14 @@ interesting about this system lives.
 2. Knapp, G. & Blanco, J. US 2008/0162329A1, "Auction For Each Individual Ad Impression." https://patents.google.com/patent/US20080162329A1/en
 3. O'Kelley, B. (2014). "How I Created the Ad Exchange." *Forbes*. (Right Media Exchange 2005 lineage)
 4. Edelman, B., Ostrovsky, M. & Schwarz, M. (2007). "Internet Advertising and the Generalized Second-Price Auction." *American Economic Review* 97(1):242–259. doi:10.1257/aer.97.1.242
-5. Cui, Z. et al. (2011). "Bid Landscape Forecasting in Online Ad Exchange Marketplace." *KDD*. doi:10.1145/2020408.2020454
+5. Cui, Y., Zhang, R., Li, W. & Mao, J. (2011). "Bid Landscape Forecasting in Online Ad Exchange Marketplace." *KDD*. doi:10.1145/2020408.2020454
 6. Yuan, S., Wang, J. & Zhao, X. (2013). "Real-time Bidding for Online Advertising: Measurement and Analysis." arXiv:1306.6542
 7. Zhang, W., Yuan, S. & Wang, J. (2014). "Optimal Real-Time Bidding for Display Advertising." *KDD*. doi:10.1145/2623330.2623633; iPinYou benchmark: "Real-Time Bidding Benchmarking with iPinYou Dataset," arXiv:1407.7073
 8. McMahan, H.B. et al. (2013). "Ad Click Prediction: a View from the Trenches." *KDD*. doi:10.1145/2487575.2488200
 9. Rendle, S. (2010). "Factorization Machines." *ICDM*. doi:10.1109/ICDM.2010.127
 10. Chapelle, O. (2014). "Modeling Delayed Feedback in Display Advertising." *KDD*. doi:10.1145/2623330.2623634
 11. Balseiro, S., Besbes, O. & Weintraub, G. (2015). "Repeated Auctions with Budgets in Ad Exchanges." *Management Science* 61(4):864–884. doi:10.1287/mnsc.2014.2022
-12. Zhang, J. et al. (2016). "Feedback Control of Real-Time Display Advertising." *WSDM*. doi:10.1145/2835776.2835843
+12. Zhang, W., Rong, Y., Wang, J., Zhu, T. & Wang, X. (2016). "Feedback Control of Real-Time Display Advertising." *WSDM*. doi:10.1145/2835776.2835843
 13. Gligorijevic, D. et al. (2020). "Bid Shading in The Brave New World of First-Price Auctions." *CIKM*. doi:10.1145/3340531.3412689; Zhou, T. et al. (2021). *KDD*. doi:10.1145/3447548.3467167
 14. Conitzer, V., Kroer, C., Panigrahi, D., Schrijvers, O., Sodomka, E., Stier-Moses, N. & Wilkens, C.A. (2019). "Pacing Equilibrium in First-Price Auction Markets." *EC*. doi:10.1145/3328526.3329600
 15. Aggarwal, G., Perlroth, E. & Zhao, J. (2023). "Multi-Channel Auction Design in the Autobidding World." *EC*. doi:10.1145/3580507.3597707

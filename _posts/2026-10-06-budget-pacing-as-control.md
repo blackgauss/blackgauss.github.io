@@ -34,8 +34,11 @@ rate, plus online correction tracking realized spend against it.
 What elevates it from root-finding to *control*: the map λ→spend has unknown,
 **drifting gain** (competition reprices underneath you), **dead time**
 (conversion-limited campaigns label hours late — a delay-biased error term
-feeds the integrator), and **multiplicative response** (on log-normal-ish
-win-rate curves, spend moves roughly exponentially with log-bid). The
+feeds the integrator), and **multiplicative response** (win-rate curves steepen
+with bid, so spend moves roughly exponentially with log-bid — the response the
+exponential actuators below are built to invert; the old "prices are
+log-normal" story behind this claim is only true of heavily pooled data, and
+fails per-segment in direct tests). The
 literature's answers are textbook control — proportional, integral, anti-windup,
 gain scheduling — plus, in the last five years, regret proofs.
 
@@ -63,7 +66,9 @@ value-blind emergency brake whose response it *can* predict. That is a
 remarkable engineering value: prefer a controller whose plant you understand
 over one whose plant is smarter, when you need determinism.
 
-**2. PID on the bid.** Taobao's production system (Zhang et al., WSDM 2016):
+**2. PID on the bid.** The BigTree DSP system (Zhang et al., WSDM 2016 — a
+Chinese mobile DSP, not Taobao; controls published every 90 minutes online,
+2-hour rounds offline on replayed iPinYou logs):
 adjust the bid multiplicatively — `b'(t) = b(t)·exp(φ(t))`, the exponential
 actuator guaranteeing positivity and matching spend's exponential response —
 with φ from a PID on the eCPC error and explicit φ-bounds (anti-windup: clamp
@@ -78,7 +83,7 @@ a line into overdelivery chasing ghosts.
 **3. Waterlevel — the degenerate PID that runs adtech.** Kp = Kd = 0:
 `φ(t+1) = φ(t) + γ·(xᵣ − x(t))`, an integrator-only law in log-bid space.
 Zero steady-state error, slower response to shocks, and — the empirical
-finding of the Taobao paper — **more robust than full PID in the real plant**
+finding of the BigTree deployment — **more robust than full PID in the real plant**
 where the feedback signal is noisy and delayed. The reason generalizes:
 P-terms leave steady-state offset, D-terms amplify noise, and an ad-system
 sensor is noisy and delayed; so the minimal law is the robust one. LinkedIn's
@@ -151,7 +156,15 @@ until the ROS violation explodes. One controller hallucinates headroom created
 by the other. (The same pathology shows up between *shading* and pacing —
 aggressive shading reads as budget slack, λ drifts up, the shade is silently
 undone — so "don't cascade, min-compose" is a law about shared actuators, not
-about adtech.) The field guide's other doctrine: **treat budget as hard and
+about adtech.) The offline ladder in Yang et al. (KDD 2019) prices these
+architectures — value ratio: naive post-hoc clamping to hold a CPC KPI 0.362,
+feedback-control variants 0.549–0.709, two independent PIDs treating each
+other's coupling as noise 0.892, coupled PIDs with a decoupling cross-feed
+0.928. The numbers are theirs and single-site (Taobao), but the ordering is
+the same physics as the theory column: satisfying the soft constraint is
+cheap; satisfying it by clipping is what destroys value. Constraints belong
+in the bid *function*, as duals, never in a post-hoc clamp. The field
+guide's other doctrine: **treat budget as hard and
 ROS as soft** — a hard stop outside the loop (auction-exclusion when spend
 hits B), because a soft constraint may be violated a little with guarantees
 while a *blown budget* is a financial event. Frequency caps and
@@ -193,12 +206,16 @@ engineering manuals with theorems inside:
    account that documents one: clock skew between controller and bidders
    across the UTC midnight reset. Budgets don't reset atomically; they
    *coordinate*, and coordination is the failure surface.
-6. **MPC where forecast quality earns it**: fit a *monotone* bid→spend model
-   (isotonic/PAVA, by construction, so the inversion is well-posed), solve
-   "what bid spends the remainder optimally over the forecast window," re-solve
-   each tick — which is what LinkedIn's plan-then-correct pattern and
-   multivariable industrial MPC (the KDD 2019 formulation) actually look like
-   as code, and where modern adtech control meets its aerospace cousin.
+ 6. **MPC where forecast quality earns it**: fit a *monotone* bid→spend model
+    (isotonic/PAVA, by construction, so the inversion is well-posed), solve
+    "what bid spends the remainder optimally over the forecast window," re-solve
+    each tick — which is what LinkedIn's plan-then-correct pattern and Chen's
+    practitioner guide actually look like as code, and where modern adtech
+    control meets its aerospace cousin. A caution attached to the literature:
+    Yang et al.'s KDD 2019 multivariable controller labels its decoupling
+    module "model predictive," but it is a fixed-gain 2×2 compensator on two
+    PID outputs — no horizon, no re-solve. Two different machines share the
+    acronym; only one of them is MPC.
 
 ## What "good" means
 
@@ -227,7 +244,7 @@ side by side. This is the level of the game.)
 ## References
 
 1. Chen, Y. (2025). "A Practical Guide to Budget Pacing Algorithms in Digital Advertising." arXiv:2503.06942
-2. Zhang, J. et al. (2016). "Feedback Control of Real-Time Display Advertising." *WSDM*. doi:10.1145/2835776.2835843, arXiv:1603.01055
+2. Zhang, W., Rong, Y., Wang, J., Zhu, T. & Wang, X. (2016). "Feedback Control of Real-Time Display Advertising." *WSDM*. doi:10.1145/2835776.2835843, arXiv:1603.01055
 3. Agarwal, A. et al. (2014). "Budget Pacing for Targeted Online Advertisements at LinkedIn." *KDD*. doi:10.1145/2623330.2623366
 4. Balseiro, S., Lu, H. & Mirrokni, V. (2023). "The Best of Many Worlds: Dual Mirror Descent for Online Allocation Problems." *Operations Research* 71(1):101–119. doi:10.1287/opre.2021.2242, arXiv:2011.10124
 5. Balseiro, S., Bhawalkar, K., Feng, Z., Lu, H., Mirrokni, V., Sivan, B. & Wang, S. (2023). "A Field Guide for Pacing Budget and ROS Constraints." *KDD*. arXiv:2302.08530
@@ -236,9 +253,9 @@ side by side. This is the level of the game.)
 8. Hajiaghayi, M. & Springer, R. (2022). "Analysis of a Learning Based Algorithm for Budget Pacing." arXiv:2205.13330
 9. Chen, X., Kroer, C. & Kumar, R. (2021). "The Complexity of Pacing for Second-Price Auctions." *Math. OR*. arXiv:2103.13969
 10. Aggarwal, G. et al. (2024). "Autobidding and Auctions in Online Advertising: A Survey." arXiv:2408.07685
-11. Yang, X. et al. (2019). "Bid Optimization by Multivariable Control in Display Advertising." *KDD*. doi:10.1145/3292500.3330681
-12. He, X. et al. (2021). "A Unified Solution to Constrained Bidding in Online Display Advertising." *KDD*. doi:10.1145/3447548.3467199
+11. Yang, X., Li, Y., Wang, H., Wu, D., Tan, Q., Xu, J. & Gai, K. (2019). "Bid Optimization by Multivariable Control in Display Advertising." *KDD*. doi:10.1145/3292500.3330681
+12. He, Y., Chen, X., Wu, D., Pan, J., Tan, Q., Yu, C., Xu, J. & Zhu, X. (2021). "A Unified Solution to Constrained Bidding in Online Display Advertising." *KDD*. doi:10.1145/3447548.3467199
 13. Chapelle, O. (2014). "Modeling Delayed Feedback in Display Advertising." *KDD*. doi:10.1145/2623330.2623634
-14. Lang, K., Moseley, B. & Vassilvitskii, S. (2012). "Handling Forecast Errors While Bidding for Display Advertising." *WWW*. doi:10.1145/2187836.2187887; and "Analysis Techniques for Exchange Advertising via Online Pacing." *WWW* (Microsoft Research; https://www.microsoft.com/en-us/research/publication/analysis-techniques-for-exchange-advertising-via-online-pacing/)
+14. Lang, K., Moseley, B. & Vassilvitskii, S. (2012). "Handling Forecast Errors While Bidding for Display Advertising." *WWW*. doi:10.1145/2187836.2187887
 15. Zhang, W., Yuan, S. & Wang, J. (2014). "Optimal Real-Time Bidding for Display Advertising." *KDD*. doi:10.1145/2623330.2623633
 16. Ghosh, A. et al. (2019). "Scalable Bid Landscape Forecasting in Real-Time Bidding." *ECML-PKDD*. arXiv:2001.06587
