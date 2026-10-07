@@ -208,13 +208,13 @@ interesting about this system lives.
 4. Edelman, B., Ostrovsky, M. & Schwarz, M. (2007). "Internet Advertising and the Generalized Second-Price Auction." *American Economic Review* 97(1):242–259. doi:10.1257/aer.97.1.242
 5. Cui, Z. et al. (2011). "Bid Landscape Forecasting in Online Ad Exchange Marketplace." *KDD*. doi:10.1145/2020408.2020454
 6. Yuan, S., Wang, J. & Zhao, X. (2013). "Real-time Bidding for Online Advertising: Measurement and Analysis." arXiv:1306.6542
-7. Zhang, W., Yuan, S. & Wang, J. (2014). "Optimal Real-Time Bidding for Display Advertising." *KDD*. doi:10.1145/2623330.2623633; iPinYou benchmark: "A Benchmark for Real-Time Bidding Advertising," arXiv:1407.0731
+7. Zhang, W., Yuan, S. & Wang, J. (2014). "Optimal Real-Time Bidding for Display Advertising." *KDD*. doi:10.1145/2623330.2623633; iPinYou benchmark: "Real-Time Bidding Benchmarking with iPinYou Dataset," arXiv:1407.7073
 8. McMahan, H.B. et al. (2013). "Ad Click Prediction: a View from the Trenches." *KDD*. doi:10.1145/2487575.2488200
 9. Rendle, S. (2010). "Factorization Machines." *ICDM*. doi:10.1109/ICDM.2010.127
 10. Chapelle, O. (2014). "Modeling Delayed Feedback in Display Advertising." *KDD*. doi:10.1145/2623330.2623634
 11. Balseiro, S., Besbes, O. & Weintraub, G. (2015). "Repeated Auctions with Budgets in Ad Exchanges." *Management Science* 61(4):864–884. doi:10.1287/mnsc.2014.2022
 12. Zhang, J. et al. (2016). "Feedback Control of Real-Time Display Advertising." *WSDM*. doi:10.1145/2835776.2835843
-13. Gligorijevic, D. et al. (2020). "Bid Shading in The Brave New World of First-Price Auctions." *CIKM*. doi:10.1145/3340531.3412689; Zhou, Y. et al. (2021). *KDD*. doi:10.1145/3447548.3467167
+13. Gligorijevic, D. et al. (2020). "Bid Shading in The Brave New World of First-Price Auctions." *CIKM*. doi:10.1145/3340531.3412689; Zhou, T. et al. (2021). *KDD*. doi:10.1145/3447548.3467167
 14. Conitzer, V., Kroer, C., Panigrahi, D., Schrijvers, O., Sodomka, E., Stier-Moses, N. & Wilkens, C.A. (2019). "Pacing Equilibrium in First-Price Auction Markets." *EC*. doi:10.1145/3328526.3329600
 15. Aggarwal, G., Perlroth, E. & Zhao, J. (2023). "Multi-Channel Auction Design in the Autobidding World." *EC*. doi:10.1145/3580507.3597707
 16. Veale, M. & Zuiderveen Borgesius, F. (2022). "Data Protection and Data Governance in Addressable Online Advertising." *J. on Law & Tech* (special issue: targeted advertising). https://www.joltjournal.com

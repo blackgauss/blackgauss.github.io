@@ -10,7 +10,7 @@ The problem, in one sentence: **spend a daily budget fully and evenly without
 overdrawing or front-loading, without knowing next hour's supply.** It sounds
 like bookkeeping. It is where a DSP most plainly becomes a control-theory and
 online-optimization problem, and the papers written by the companies doing it
-at scale (Alibaba, Tencent, LinkedIn, Google, the theoretical group around
+at scale (Alibaba, Yahoo, LinkedIn, Google, the theoretical group around
 Balseiro–Mirrokni) are unusually good — enough that I think pacing is the
 single best domain to learn online convex optimization from. This entry is the
 whole thread: the dual view, the four update laws in their historical order,
@@ -42,8 +42,9 @@ gain scheduling — plus, in the last five years, regret proofs.
 ## The update laws, oldest to newest
 
 **1. Throttling (the spend governor).** The oldest device, shipped at
-exchanges before pacing had a name, formalized in Tencent's *Practical Guide to
-Budget Pacing* (2025) as Algorithm 1: target `α(t) = (t/T)·B`, and a
+exchanges before pacing had a name, formalized in Yuanlong Chen's *Practical
+Guide to Budget Pacing Algorithms* (2025; arXiv:2503.06942) as Algorithm 1:
+target `α(t) = (t/T)·B`, and a
 participation probability nudged multiplicatively:
 
 ```
@@ -55,7 +56,8 @@ A pure proportional controller on the *gate*. You randomly drop eligible
 auctions. Its weakness is exactly its simplicity: the gate is value-blind — it
 discards a $100 conversion's auction as cheerfully as the next one's, so
 bid-based control dominates whenever value ranking is trustworthy. But note
-Tencent's own confession that throttling "has not been completely replaced":
+the guide's own confession that bid-based pacing "should not be interpreted as
+a complete replacement of throttling":
 changing *bids* has an unpredictable spend response, so the industry keeps a
 value-blind emergency brake whose response it *can* predict. That is a
 remarkable engineering value: prefer a controller whose plant you understand
@@ -153,9 +155,9 @@ about adtech.) The field guide's other doctrine: **treat budget as hard and
 ROS as soft** — a hard stop outside the loop (auction-exclusion when spend
 hits B), because a soft constraint may be violated a little with guarantees
 while a *blown budget* is a financial event. Frequency caps and
-min-delivery floors slot into the same frame as further duals — Tencent's
-guide works through campaign-group budgets and pacing floors with the same
-machinery.
+min-delivery floors slot into the same frame as further duals — Chen's
+guide works through campaign-group budgets and minimum-delivery constraints
+with the same machinery.
 
 ## The closed loop, drawn with its stability notes
 
@@ -218,12 +220,13 @@ be a prediction system that spends money and becomes a **control system whose
 sensor happens to be a market** — and once you see the budget line as a plant
 with drifting gain and dead time, half the adtech literature reads as
 application notes for a 60-year-old discipline, which is either deflating or
-liberating depending on your taste. (Tencent's book literally cites Åström
-& Hägglund for its PID tuning chapter. This is the level of the game.)
+liberating depending on your taste. (Chen's book cites Camacho & Bordons' MPC
+textbook and Smirnov, Lu & Lee's *Online Ad Campaign Tuning with PID Control*
+side by side. This is the level of the game.)
 
 ## References
 
-1. Xu, K. et al. (Tencent, 2025). "A Practical Guide to Budget Pacing." arXiv:2503.06942
+1. Chen, Y. (2025). "A Practical Guide to Budget Pacing Algorithms in Digital Advertising." arXiv:2503.06942
 2. Zhang, J. et al. (2016). "Feedback Control of Real-Time Display Advertising." *WSDM*. doi:10.1145/2835776.2835843, arXiv:1603.01055
 3. Agarwal, A. et al. (2014). "Budget Pacing for Targeted Online Advertisements at LinkedIn." *KDD*. doi:10.1145/2623330.2623366
 4. Balseiro, S., Lu, H. & Mirrokni, V. (2023). "The Best of Many Worlds: Dual Mirror Descent for Online Allocation Problems." *Operations Research* 71(1):101–119. doi:10.1287/opre.2021.2242, arXiv:2011.10124
@@ -231,11 +234,11 @@ liberating depending on your taste. (Tencent's book literally cites Åström
 6. Conitzer, V., Kroer, C., Sodomka, E. & Stier-Moses, N. (2019/2022). "Pacing Equilibrium in First-Price Auction Markets." *EC 2019*, doi:10.1145/3328526.3329600; "Multiplicative Pacing Equilibria in Auction Markets," *Management Science* 70(2). doi:10.1287/mnsc.2022.4310, arXiv:1811.07166
 7. Balseiro, S., Kim, B., Mahdian, M. & Mirrokni, V. (2021). "Budget-Management Strategies in Repeated Auctions." *Operations Research* 69(3):859–876. doi:10.1287/opre.2020.2073 (+ WWW 2018, doi:10.1145/3038912.3052682)
 8. Hajiaghayi, M. & Springer, R. (2022). "Analysis of a Learning Based Algorithm for Budget Pacing." arXiv:2205.13330
-9. Chen, X., Kroer, C. & Kumar, A. (2023). "The Complexity of Pacing for Second-Price Auctions." *Math. OR*. arXiv:2103.13969
+9. Chen, X., Kroer, C. & Kumar, R. (2021). "The Complexity of Pacing for Second-Price Auctions." *Math. OR*. arXiv:2103.13969
 10. Aggarwal, G. et al. (2024). "Autobidding and Auctions in Online Advertising: A Survey." arXiv:2408.07685
 11. Yang, X. et al. (2019). "Bid Optimization by Multivariable Control in Display Advertising." *KDD*. doi:10.1145/3292500.3330681
 12. He, X. et al. (2021). "A Unified Solution to Constrained Bidding in Online Display Advertising." *KDD*. doi:10.1145/3447548.3467199
 13. Chapelle, O. (2014). "Modeling Delayed Feedback in Display Advertising." *KDD*. doi:10.1145/2623330.2623634
-14. Lang, K., Moseley, B. & Vassilvitskii, S. (2012). "Analysis Techniques for Exchange Advertising via Online Pacing." *WWW*. doi:10.1145/2187836.2187887
+14. Lang, K., Moseley, B. & Vassilvitskii, S. (2012). "Handling Forecast Errors While Bidding for Display Advertising." *WWW*. doi:10.1145/2187836.2187887; and "Analysis Techniques for Exchange Advertising via Online Pacing." *WWW* (Microsoft Research; https://www.microsoft.com/en-us/research/publication/analysis-techniques-for-exchange-advertising-via-online-pacing/)
 15. Zhang, W., Yuan, S. & Wang, J. (2014). "Optimal Real-Time Bidding for Display Advertising." *KDD*. doi:10.1145/2623330.2623633
 16. Ghosh, A. et al. (2019). "Scalable Bid Landscape Forecasting in Real-Time Bidding." *ECML-PKDD*. arXiv:2001.06587

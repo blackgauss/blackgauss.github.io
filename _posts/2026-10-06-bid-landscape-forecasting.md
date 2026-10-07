@@ -185,7 +185,7 @@ of saying the benchmark numbers measure estimation, not profit.
 4. Wu, Y., Chang, K.-W. & Wang, C. (2015). "Predicting Winning Price in Real Time Bidding with Censored Data." *KDD*, 1305–1314.
 5. Wang, H. et al. (2016). "Functional Bid Landscape Forecasting for Display Advertising." *ECML-PKDD*, 115–131.
 6. Wu, Y., Yeh, C.-Y. & Chen, Y.-M. (2018). "Deep Censored Learning of the Winning Price in the Real Time Bidding." *KDD*, 2526–2535.
-7. Ghosh, A., Mitra, S., Sarkhel, S., Xie, C., Wu, X. & Swaminathan, S. (2019). "Scalable Bid Landscape Forecasting in Real-Time Bidding." *ECML-PKDD*. arXiv:2001.06587
+7. Ghosh, A., Mitra, S., Sarkhel, S., Xie, J., Wu, G. & Swaminathan, S. (2019). "Scalable Bid Landscape Forecasting in Real-Time Bidding." *ECML-PKDD*. arXiv:2001.06587
 8. Ren, Q., Qin, X., Zheng, B., Yang, Z., Zhang, W. & Yu, Y. (2019). "Deep Landscape Forecasting for Real-time Bidding Advertising." *KDD*. doi:10.1145/3292500.3330870, arXiv:1905.03028. Code: https://github.com/rk2900/DLF
 9. Kaplan, E. L. & Meier, P. (1958). "Nonparametric Estimation from Incomplete Observations." *JASA* 53(282):457–481.
 10. Aouad, A., Elmachtoub, A. N., Ferreira, K. J. & McNellis, R. P. (2019). "Market Segmentation Trees." *Operations Research* (arXiv:1906.01174)

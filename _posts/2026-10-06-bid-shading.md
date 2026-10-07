@@ -161,8 +161,8 @@ rather than a level field:
    shaded first-price payments looked like SPA outcomes in DSP reporting. The
    empirical record we *can* anchor: FPA adoption explained by soft floors and
    SSP competition (Despotakis, Ravi & Sayedi, *JMR* 2021); measured bidder
-   responses — shade factors, bid levels — to the format change (Deng, Mao,
-   Rodriguez & Wang 2021); and learning-agent simulation comparing FPA vs SPA
+   responses — prices, and the inferred undershading that decays as bidders learn to shade — to the format change (Goke, Weintraub,
+   Mastromonaco & Seljan 2021); and learning-agent simulation comparing FPA vs SPA
    revenue in display (Bichler, Gupta & Oberlechner, *ISR* 2026). The
    widely-quoted trade-press percentage deltas remained, in my reading,
    unanchored to any primary source.
@@ -194,22 +194,22 @@ as I can tell, the only kind programmatic ever hands out.
 
 1. Vickrey, W. (1961). "Counterspeculation, Auctions, and Competitive Sealed Tenders." *Journal of Finance* 16(1). doi:10.1111/j.1540-6261.1961.tb02789.x
 2. Myerson, R. (1981). "Optimal Auction Design." *Mathematics of Operations Research* 6(1). doi:10.1287/moor.6.1.58
-3. Maskin, E. & Riley, J. (2000). "Asymmetric Auctions." *Review of Economic Studies* 67(2). doi:10.1111/1467-937X.00137; and "Optimal Auctions with Risk Averse Bidders." doi:10.1111/1467-937X.00138
+3. Maskin, E. & Riley, J. (2000). "Asymmetric Auctions." *Review of Economic Studies* 67(2). doi:10.1111/1467-937X.00137; and "Equilibrium in Sealed High Bid Auctions." doi:10.1111/1467-937X.00138
 4. Milgrom, P. & Weber, R. (1982). "A Theory of Auctions and Competitive Bidding." *Econometrica* 50(5). doi:10.2307/1911865
 5. Gligorijevic, D. et al. (2020). "Bid Shading in The Brave New World of First-Price Auctions." *CIKM*. doi:10.1145/3340531.3412689 (preprint arXiv:2009.01360)
-6. Zhou, Y. et al. (2021). "An Efficient Deep Distribution Network for Bid Shading in First-Price Auctions." *KDD*. doi:10.1145/3447548.3467167, arXiv:2107.06650
+6. Zhou, T. et al. (2021). "An Efficient Deep Distribution Network for Bid Shading in First-Price Auctions." *KDD*. doi:10.1145/3447548.3467167, arXiv:2107.06650
 7. Conitzer, V., Kroer, C., Sodomka, E. & Stier-Moses, N. (2019/2022). "Pacing Equilibrium in First-Price Auction Markets," *EC*, doi:10.1145/3328526.3329600; "Multiplicative Pacing Equilibria in Auction Markets," *Management Science* 70(2). doi:10.1287/mnsc.2022.4310, arXiv:1811.07166
-8. Zhang, A. (2017). "Nonparametric estimation of the bidding function in first-price auctions with entry and observable outliers." *Economics Letters*. doi:10.1016/j.econlet.2016.11.001
+8. Zhang, Y.Y. (2017). "A Shape Constrained Estimator of Bidding Function of First-Price Sealed-Bid Auctions." *Economics Letters*. doi:10.1016/j.econlet.2016.11.001
 9. Curmei, D. & Hall, D. (2025). "Shape-constrained regression using sums-of-squares of polynomials." *Operations Research*. doi:10.1287/opre.2021.0383
 10. Han, D., Zhou, T. & Weissman, T. (2021/24). "Optimal No-Regret Learning in Repeated First-Price Auctions." *Operations Research*. doi:10.1287/opre.2020.0282
-11. Danak, A. & Mannor, S. (2012). "Easy is better than difficult…" *Annals of Operations Research*. doi:10.1007/s10479-012-1148-8
-12. Ratan, A. & Wen, Q. (2016). "Reinforcement learning and strategic bidding in first price auctions." *Economics Letters*. doi:10.1016/j.econlet.2016.03.021
+11. Danak, A. & Mannor, S. (2012). "Approximately Optimal Bidding Policies for Repeated First-Price Auctions." *Annals of Operations Research*. doi:10.1007/s10479-012-1148-8
+12. Ratan, A. & Wen, Q. (2016). "Does Regret Matter in First-Price Auctions?" *Economics Letters*. doi:10.1016/j.econlet.2016.03.021
 13. Balseiro, S., Besbes, O. & Weintraub, G. (2015). "Repeated Auctions with Budgets in Ad Exchanges: Equilibria and Design." *Management Science* 61(4):864–884. doi:10.1287/mnsc.2014.2022
-14. Balseiro, S., Deng, Y., Mao, J., Mirrokni, V. & Zuo, S. (2021). "The Landscape of Auto-bidding auctions: Value or utility maximization?" *ACM EC*. doi:10.1145/3465456.3467607
-15. Despotakis, S., Ravi, R. & Sayedi, A. (2021). "The Rise of First-Price Auctions." *Journal of Marketing Research*. doi:10.1177/00222437211030201
-16. Deng, Y., Mao, J., Rodriguez, V. & Wang, K. (2021). "Conducting First-Price Auctions in Display Advertising." arXiv:2110.13814
-17. Bichler, M., Gupta, V. & Oberlechner, M. (2026). "From Second-to-First Price Auctions, or Not?" *Information Systems Research*. doi:10.1287/isre.2025.2160
-18. Deshpande, Y. et al. (2023). "Optimization of Floor Prices in First-Price Auctions." arXiv:2302.06018
-19. Fagandini, A. & Dierickx, I. (2023). "Computing profit-maximizing bid-shading factors…," *Computational Economics*. doi:10.1007/s10614-022-10321-y (corrigendum doi:10.1007/s10614-022-10343-6); Tilli, P. & Espinosa-Leal, C. (2021). *J. Intell. Fuzzy Systems*. doi:10.3233/JIFS-202665
+14. Balseiro, S., Deng, Y., Mao, J., Mirrokni, V. & Zuo, S. (2021). "The Landscape of Auto-Bidding Auctions: Value versus Utility Maximization." *ACM EC*. doi:10.1145/3465456.3467607
+15. Despotakis, S., Ravi, R. & Sayedi, A. (2021). "First-Price Auctions in Online Display Advertising." *Journal of Marketing Research*. doi:10.1177/00222437211030201
+16. Goke, S., Weintraub, G.Y., Mastromonaco, R. & Seljan, S. (2021). "Bidders' Responses to Auction Format Change in Internet Display Advertising Auctions." arXiv:2110.13814
+17. Bichler, M., Gupta, V. & Oberlechner, M. (2026). "Revenue in First- and Second-Price Display Advertising Auctions: Understanding Markets with Learning Agents." *Information Systems Research*. doi:10.1287/isre.2025.2160
+18. Alcobendas, M., Ji, J., Gokulakannan, H., et al. (2023). "Optimizing Floors in First Price Auctions: An Empirical Study of Yahoo Advertising." arXiv:2302.06018
+19. Fagandini, A. & Dierickx, I. (2023). "Computing profit-maximizing bid-shading factors…," *Computational Economics*. doi:10.1007/s10614-022-10321-y (corrigendum doi:10.1007/s10614-022-10343-6); Tilli, P. & Espinosa-Leal, C. (2021). "Multi-Armed Bandits for Bid Shading in First-Price Real-Time Bidding Auctions." *J. Intell. Fuzzy Systems*. doi:10.3233/JIFS-202665
 20. IAB Tech Lab, *OpenRTB 2.6*, §3.2.1 (`at` field), §4.4 (`AUCTION_PRICE` macros). https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md
 21. Google Ad Manager first-price migration (2019); PubMatic, "First Price Auctions & Auction Dynamics." https://pubmatic.com/blog/first-price-auctions-auction-dynamics/

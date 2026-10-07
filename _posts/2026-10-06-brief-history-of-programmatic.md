@@ -275,7 +275,7 @@ mostly so that *future me* doesn't forget that promise.
 21. ICO, *Update report into adtech and real time bidding*, 2019-06-20.
 22. Belgian DPA, Decision 21/2022 re IAB Europe TCF, 2022-02-02.
 23. Veale, M. & Zuiderveen Borgesius, F. (2022). "AdTech and Real-Time Bidding under European Data Protection Law." *German Law Journal*. doi:10.31235/osf.io/wg8fq
-24. Veale, M., Nouwens, K. & Santos, I. (2022). "Impossible Asks: Can the TCF Ever Authorise RTB After the Belgian DPA Decision?" *TechReg*. doi:10.26116/techreg.2022.002
+24. Veale, M., Nouwens, K. & Santos, C.T. (2022). "Impossible Asks: Can the Transparency and Consent Framework Ever Authorise Real-Time Bidding After the Belgian DPA Decision?" *TechReg*. doi:10.26116/techreg.2022.002
 25. Prebid, "Introduction to Prebid" (header bidding launch, adapters, parallel bidders). https://docs.prebid.org/overview/intro.html
 26. Kochalski et al. (2021). "Detecting Ad Fraud and Financial Losses in Digital Advertising." (AdKDD; citation chain via secondary sources — arXiv ID unresolvable this pass, flagged rather than fabricated.)
 27. Aggarwal, G., Perlroth, M. & Zhao, J. (2023). "Multi-Channel Auction Design in the Autobidding World." *EC*. doi:10.1145/3580507.3597707

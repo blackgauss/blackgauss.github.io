@@ -56,7 +56,7 @@ jointly trains a memorization side (cross-product transforms —
 side (embeddings to a DNN) so the wide part papers over the deep part's imperfect
 extrapolation. Not an ensemble; joint training is the point.
 
-**DCN** (Zhou et al., ADS@KDD 2017) replaces manual crosses with learned ones:
+**DCN** (Wang, Fu, Fu & Wang, ADKDD 2017) replaces manual crosses with learned ones:
 `x_{l+1} = x₀x_lᵀw_l + b_l + x_l` — linear parameters per layer, spanning all
 crossings up to order l+1. (DCN-v2 later promotes `w_l` to matrices.)
 
@@ -66,7 +66,7 @@ on the candidate ad*, so "the user" is a different representation for every ad
 being scored. This candidate-conditioned attention is the pattern that
 propagated into essentially every DSP scoring stack afterward.
 
-**xDeepFM** (Wang, Fu & Chen, SIGIR 2018) adds the Compressed Interaction
+**xDeepFM** (Lian et al., KDD 2018) adds the Compressed Interaction
 Network: vector-level, order-by-order explicit interactions beside implicit
 DNN ones.
 
@@ -201,23 +201,23 @@ market moves under it.
 ## References
 
 1. Rendle, S. (2010). "Factorization Machines." *IEEE ICDM*. doi:10.1109/ICDM.2010.127
-2. Juan, Y. et al. (2017). "Field-aware Factorization Machines for CTR Prediction." *RecSys*, doi:10.1145/3109859.3109862; "FFM in a Real-world Online Advertising System." *WWW*. arXiv:1701.04099
+2. Juan, Y. et al. (2017). "Field-aware Factorization Machines for CTR Prediction." *RecSys*, doi:10.1145/2959100.2959134; "FFM in a Real-world Online Advertising System." *WWW*. arXiv:1701.04099
 3. Cheng, H. et al. (2016). "Wide & Deep Learning for Recommender Systems." DLRS@ICML. arXiv:1606.07792, doi:10.1145/2988450.2988454
-4. Zhou, X. (2018) / Zhou, H. et al. (2017). "Deep & Cross Network for Ad Click Predictions." ADKDD. arXiv:1708.05123; DCN-v2 arXiv:2008.13535
+4. Wang, R., Fu, B., Fu, G. & Wang, M. (2017). "Deep & Cross Network for Ad Click Predictions." *ADKDD*. arXiv:1708.05123; DCN-v2: Wang, R. et al. (2020), arXiv:2008.13535
 5. Zhou, G. et al. (2018). "Deep Interest Network for Click-Through Rate Prediction." *KDD*. arXiv:1706.06978, doi:10.1145/3219819.3219823
-6. Wang, J., Fu, F. & Chen, J. (2018). "xDeepFM." *SIGIR*. arXiv:1803.05170
+6. Lian, J., Zhou, X., Zhang, F., Chen, Z., Xie, X. & Sun, G. (2018). "xDeepFM: Combining Explicit and Implicit Feature Interactions for Recommender Systems." *KDD*. arXiv:1803.05170
 7. McMahan, H.B. et al. (2013). "Ad Click Prediction: a View from the Trenches." *KDD*. doi:10.1145/2487575.2488200
 8. Xu, D., Xiao, Y. & Qi, B. (2018). "Self-defined Loss Function & Mirror Descent View of FTRL." *JMLR* 19(47) (FTRL–mirror-descent equivalence); McMahan (2011). "Regularized Algorithms for Online Learning." *AISTATS*
-9. Streeter, M. & McMahan, H.B. (2012). "Improving regret bounds for online PCA… / lower bounds for per-coordinate." *COLT*, arXiv:1002.4862
+9. Streeter, M. & McMahan, H.B. (2010). "Less Regret via Online Conditioning." *COLT*, arXiv:1002.4862
 10. Duchi, J., Hazan, E. & Singer, Y. (2011). "Adaptive Subgradient Methods." *JMLR* 12 (Adagrad)
 11. Golovin, D. et al. (2015). "Quantized Logistic Regression via Randomized Rounding (q2.13)." *ICML / IEEE Data Eng. Bull* 38(1)
 12. Chapelle, O. (2014). "Modeling Delayed Feedback in Display Advertising." *KDD*. doi:10.1145/2623330.2623634 (preprint wnzhang.net RTB reading list)
 13. Niculescu-Mizil, A. & Caruana, R. (2005). "Predicting Good Probabilities with a Learning Curve / Obeying the Law." *ICML*. (Platt-scaling calibration paper)
-14. Elkan, C. & Noto, K. (2008). "Learning Classifiers from Only Positive and Unlabeled Data." *ICML*. doi:10.1145/1394021.1394055
+14. Elkan, C. & Noto, K. (2008). "Learning Classifiers from Only Positive and Unlabeled Data." *ICML*. doi:10.1145/1401890.1401920
 15. Schnabel, T. et al. (2016). "Recommendations as Treatments: Debiasing Learning and Evaluation." *ICML*. arXiv:1602.05352
-16. Cortes, C. et al. (2008). "Sample Selection Bias Correction Theory." *ALT*. doi:10.1007/978-3-540-87987-9_10
+16. Cortes, C. et al. (2008). "Sample Selection Bias Correction Theory." *ALT*. doi:10.1007/978-3-540-87987-9_8
 17. McMahan, H.B. & Muralidharan, A. (2012). "A General Adaptive Regularization Framework with Improved Regret Bounds." / calibration under feedback ("Model Calibration with Bandit Feedback").
 18. Tiwari, M. & Seldowia, A. (2015). (Criteo/Google delayed conversion stats as cited in Chapelle §2.3)
 19. Feast documentation (feature registry, point-in-time correctness). https://docs.feast.dev
 20. Ren, K. et al. (2019). "Learning the Win-Price in Display Advertising." *KDD*; Ghosh et al. (2019). "Scalable Bid Landscape Forecasting." arXiv:2001.06587 (landscape models consumed by the bid side)
-21. Ananthanarayanan et al. (2013). "Photon: Join-based Streaming." *SIGMOD*. doi:10.1145/2463372.2463403 (the join architecture behind the McMahan system)
+21. Ananthanarayanan et al. (2013). "Photon: Fault-tolerant and Scalable Joining of Continuous Data Streams." *SIGMOD*. doi:10.1145/2463676.2465272 (the join architecture behind the McMahan system)

@@ -260,5 +260,5 @@ describe the industry's balance of power more honestly than its blogs do.
 8. Edelman, Ostrovsky & Schwarz (2007). "Internet Advertising and the Generalized Second-Price Auction." *American Economic Review* 97(1):242–59. doi:10.1257/aer.97.1.242
 9. Balseiro, Besbes & Weintraub (2015). "Repeated Auctions with Budgets in Ad Exchanges." *Management Science* 61(4). doi:10.1287/mnsc.2014.2022
 10. Gligorijevic, D. et al. (2020). "Bid Shading in The Brave New World of First-Price Auctions." *CIKM*. doi:10.1145/3340531.3412689, arXiv:2009.01360
-11. Zhou, Y. et al. (2021). "An Efficient Deep Distribution Network for Bid Shading in First-Price Auctions." *KDD*. doi:10.1145/3447548.3467167, arXiv:2107.06650
+11. Zhou, T. et al. (2021). "An Efficient Deep Distribution Network for Bid Shading in First-Price Auctions." *KDD*. doi:10.1145/3447548.3467167, arXiv:2107.06650
 12. PubMatic, "First-Price Auctions & Auction Dynamics." https://pubmatic.com/blog/first-price-auctions-auction-dynamics/
